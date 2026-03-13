@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Cigares Mont Noir – CSCO" description="Cigares d'exception Mont Noir, une collaboration exclusive CSCO x Vegas Corporan.">
+  <Nav />
+
+  <!-- Hero Section -->
+  <section class="hero-cigares">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <h1>Mont Noir</h1>
+      <p class="hero-subtitle">L'Art du Cigare</p>
+    </div>
+  </section>
+
+  <!-- Présentation Section -->
+  <section class="presentation">
+    <div class="presentation-grid">
+      <div class="presentation-text fade-up">
+        <h2>CSCO × Vegas Corporan</h2>
+        <p class="collaboration">Une Collaboration Exclusive</p>
+        
+        <p>Mont Noir incarne la rencontre entre l'excellence du savoir-faire dominicain de Vegas Corporan et l'exigence de la Maison CSCO. Chaque cigare est le fruit d'une sélection rigoureuse des plus belles feuilles de tabac, vieillies et roulées selon la tradition.</p>
+
+        <p>Cette collection exclusive allie puissance et finesse, offrant une expérience sensorielle d'exception pour les amateurs les plus exigeants.</p>
+
+        <div class="exclusivite-badge">
+          <p>Exclusivité CSCO</p>
+        </div>
+      </div>
+
+      <div class="presentation-image fade-up">
+        <img src={base + '/images/hoverla-cigare-gros-plan.jpg'} alt="Cigare Mont Noir" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Coffret Section -->
+  <section class="coffret-cigare">
+    <div class="coffret-grid">
+      <div class="coffret-image fade-up">
+        <img src={base + '/images/csco-coffret-ouvert.jpg'} alt="Coffret Mont Noir" />
+      </div>
+      <div class="coffret-text fade-up">
+        <h2>Coffrets d'Exception</h2>
+        <p>Nos coffrets Mont Noir présentent une sélection soigneusement composée, dans un écrin digne des plus grands crus. Parfaits pour découvrir ou offrir l'excellence.</p>
+        <a href={base + '/coffrets'} class="btn">Voir les coffrets</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero-cigares {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/jp-project-site/images/hoverla-cigare-gros-plan.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(8, 8, 8, 0.6), rgba(8, 8, 8, 0.85));
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 2.5vw, 28px);
+    font-style: italic;
+    color: var(--white-2);
+  }
+
+  .presentation {
+    background: var(--bg);
+  }
+
+  .presentation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .collaboration {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 30px;
+  }
+
+  .presentation-text p {
+    margin-bottom: 20px;
+  }
+
+  .exclusivite-badge {
+    margin-top: 40px;
+    padding: 20px;
+    border: 2px solid var(--gold);
+    text-align: center;
+  }
+
+  .exclusivite-badge p {
+    font-family: var(--font-display);
+    font-size: 18px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .presentation-image img {
+    width: 100%;
+    border: 1px solid var(--border);
+  }
+
+  .coffret-cigare {
+    background: var(--bg-2);
+  }
+
+  .coffret-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .coffret-text p {
+    margin-bottom: 30px;
+  }
+
+  .coffret-image img {
+    width: 100%;
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .presentation-grid,
+    .coffret-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>

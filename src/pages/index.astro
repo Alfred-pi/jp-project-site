@@ -1,0 +1,184 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ProductCard from '../components/ProductCard.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="CSCO – Excellence & Élégance" description="CSCO by Jean-Philippe Guidicili – Vodka artisanale HOVERLA, Cigares Mont Noir, et coffrets d'exception">
+  <Nav />
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content fade-up">
+      <h1>CSCO</h1>
+      <p class="hero-subtitle">Excellence & Élégance</p>
+      <a href={base + '/vodka'} class="btn">Découvrir</a>
+    </div>
+  </section>
+
+  <!-- Univers Section -->
+  <section class="univers">
+    <div class="univers-grid">
+      <div class="univers-text fade-up">
+        <h2>La Maison CSCO</h2>
+        <p>CSCO incarne l'excellence et le raffinement à travers une sélection exigeante de produits premium. De la vodka artisanale ukrainienne HOVERLA aux cigares d'exception Mont Noir, chaque création reflète un savoir-faire ancestral et une quête de perfection.</p>
+        <p>Notre philosophie : offrir des expériences sensorielles uniques, où tradition et élégance se rencontrent pour créer des moments inoubliables.</p>
+      </div>
+      <div class="univers-image fade-up">
+        <img src={base + '/images/csco-coffret-promo.jpg'} alt="Coffret CSCO" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Produits Section -->
+  <section class="produits">
+    <h2 class="fade-up">Nos Produits</h2>
+    <div class="produits-grid">
+      <ProductCard 
+        title="Vodka HOVERLA"
+        description="Vodka artisanale ukrainienne d'exception, 5 fois distillée et 2 fois filtrée. Sept saveurs uniques inspirées des Carpates."
+        image="/images/hoverla-gamme-bar.jpg"
+        link="/vodka"
+      />
+      <ProductCard 
+        title="Cigares Mont Noir"
+        description="Une collaboration exclusive entre CSCO et Vegas Corporan. L'art du cigare rencontre l'élégance contemporaine."
+        image="/images/hoverla-cigare-gros-plan.jpg"
+        link="/cigares"
+      />
+    </div>
+  </section>
+
+  <!-- Coffrets Section -->
+  <section class="coffrets-promo">
+    <div class="coffrets-grid">
+      <div class="coffrets-image fade-up">
+        <img src={base + '/images/csco-coffrets-cigare.jpg'} alt="Coffrets CSCO" />
+      </div>
+      <div class="coffrets-text fade-up">
+        <h2>Coffrets d'Exception</h2>
+        <p>Découvrez nos coffrets prestige, alliant vodka HOVERLA et cigares Mont Noir dans des écrins soigneusement composés. Parfaits pour offrir ou pour célébrer les grandes occasions.</p>
+        <a href={base + '/coffrets'} class="btn">Voir les coffrets</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/jp-project-site/images/hoverla-gamme-bar.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(8, 8, 8, 0.5), rgba(8, 8, 8, 0.8));
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--white);
+  }
+
+  .hero-subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 3vw, 32px);
+    font-style: italic;
+    color: var(--white-2);
+    margin-bottom: 40px;
+  }
+
+  .univers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .univers-text p {
+    margin-bottom: 20px;
+  }
+
+  .univers-image img {
+    width: 100%;
+    border: 1px solid var(--border);
+  }
+
+  .produits {
+    background: var(--bg-2);
+  }
+
+  .produits h2 {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .produits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+  }
+
+  .coffrets-promo {
+    background: var(--bg);
+  }
+
+  .coffrets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .coffrets-text p {
+    margin-bottom: 30px;
+  }
+
+  .coffrets-image img {
+    width: 100%;
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 768px) {
+    .univers-grid,
+    .coffrets-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .coffrets-grid {
+      direction: ltr;
+    }
+
+    .coffrets-image {
+      order: 1;
+    }
+
+    .coffrets-text {
+      order: 2;
+    }
+
+    .produits-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

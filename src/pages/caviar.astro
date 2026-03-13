@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title="Caviar – Bientôt Disponible – CSCO" description="Le caviar CSCO arrive prochainement. Excellence et raffinement.">
+  <Nav />
+
+  <!-- Coming Soon Section -->
+  <section class="coming-soon">
+    <div class="coming-soon-content fade-up">
+      <div class="icon-caviar">
+        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="6"></circle>
+          <circle cx="12" cy="12" r="2"></circle>
+        </svg>
+      </div>
+      
+      <h1>Caviar</h1>
+      <p class="subtitle">Bientôt Disponible</p>
+      
+      <div class="description">
+        <p>La Maison CSCO prépare l'arrivée d'une sélection exclusive de caviar d'exception.</p>
+        <p>Une nouvelle dimension du luxe et du raffinement, fidèle à notre exigence d'excellence.</p>
+      </div>
+
+      <div class="notify-box">
+        <p>Restez informé du lancement</p>
+        <a href={base + '/contact'} class="btn">Me prévenir</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .coming-soon {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 50%, var(--bg) 100%);
+    text-align: center;
+    padding: 80px 20px;
+  }
+
+  .coming-soon-content {
+    max-width: 600px;
+  }
+
+  .icon-caviar {
+    margin-bottom: 40px;
+    color: var(--gold);
+  }
+
+  .icon-caviar svg {
+    margin: 0 auto;
+  }
+
+  .subtitle {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 3vw, 32px);
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 60px;
+  }
+
+  .description {
+    margin-bottom: 60px;
+  }
+
+  .description p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: var(--white-2);
+  }
+
+  .notify-box {
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    padding: 40px;
+  }
+
+  .notify-box p {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--gold);
+    margin-bottom: 25px;
+  }
+</style>

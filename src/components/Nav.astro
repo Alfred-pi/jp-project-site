@@ -1,0 +1,156 @@
+---
+const { pathname } = Astro.url;
+const base = import.meta.env.BASE_URL;
+
+function isActive(path: string) {
+  if (path === '/') {
+    return pathname === base || pathname === base + '/';
+  }
+  return pathname.startsWith(base + path);
+}
+---
+
+<nav class="main-nav">
+  <div class="nav-container">
+    <a href={base + '/'} class="logo">CSCO</a>
+    
+    <button class="hamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href={base + '/vodka'} class={isActive('/vodka') ? 'active' : ''}>Vodka</a></li>
+      <li><a href={base + '/cigares'} class={isActive('/cigares') ? 'active' : ''}>Cigares</a></li>
+      <li><a href={base + '/coffrets'} class={isActive('/coffrets') ? 'active' : ''}>Coffrets</a></li>
+      <li><a href={base + '/caviar'} class={isActive('/caviar') ? 'active' : ''}>Caviar</a></li>
+      <li><a href={base + '/contact'} class={isActive('/contact') ? 'active' : ''}>Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  .main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8, 8, 8, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--white-2);
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--gold);
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 2px;
+    background: var(--gold);
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 15px 20px;
+    }
+
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(8, 8, 8, 0.98);
+      flex-direction: column;
+      gap: 0;
+      padding: 20px 0;
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-links.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .nav-links li {
+      padding: 15px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links li:last-child {
+      border-bottom: none;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger?.addEventListener('click', () => {
+      navLinks?.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    navLinks?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger?.classList.remove('active');
+      });
+    });
+  });
+</script>

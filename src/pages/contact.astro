@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contact – CSCO" description="Contactez CSCO pour toute demande concernant nos produits d'exception.">
+  <Nav />
+
+  <!-- Contact Section -->
+  <section class="contact-page">
+    <div class="contact-container">
+      <div class="contact-intro fade-up">
+        <h1>Contactez-nous</h1>
+        <p>Pour toute demande d'information, commande de coffret ou question sur nos produits, nous sommes à votre écoute.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-form fade-up">
+          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hidden">
+              <label>Ne pas remplir : <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-group">
+              <label for="name">Nom complet *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Sujet *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Sélectionnez un sujet</option>
+                <option value="commande-coffret">Commande de coffret</option>
+                <option value="info-vodka">Information Vodka HOVERLA</option>
+                <option value="info-cigares">Information Cigares Mont Noir</option>
+                <option value="partenariat">Partenariat / Revendeur</option>
+                <option value="autre">Autre demande</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Envoyer</button>
+          </form>
+        </div>
+
+        <div class="contact-info fade-up">
+          <div class="info-block">
+            <h3>HOVERLA Vodka</h3>
+            <p><strong>Email :</strong><br/>
+            <a href="mailto:contact@hoverlavodka.com">contact@hoverlavodka.com</a></p>
+            <p><strong>Site officiel :</strong><br/>
+            <a href="https://www.hoverlavodka.com" target="_blank" rel="noopener">www.hoverlavodka.com</a></p>
+          </div>
+
+          <div class="info-block">
+            <h3>Suivez-nous</h3>
+            <div class="social-links">
+              <a href="https://www.instagram.com/hoverla.vodka" target="_blank" rel="noopener" class="social-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <span>@hoverla.vodka</span>
+              </a>
+              <a href="https://www.facebook.com/hoverlavodka" target="_blank" rel="noopener" class="social-link">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                </svg>
+                <span>@hoverlavodka</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="info-block">
+            <h3>Horaires</h3>
+            <p>Du lundi au vendredi<br/>
+            9h00 - 18h00</p>
+            <p class="note">Réponse sous 24-48h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  .contact-page {
+    background: var(--bg);
+    padding: 80px 20px 120px;
+  }
+
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contact-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 80px;
+  }
+
+  .contact-intro h1 {
+    margin-bottom: 20px;
+  }
+
+  .contact-intro p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--white-2);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+  }
+
+  .contact-form {
+    background: var(--bg-2);
+    padding: 40px;
+    border: 1px solid var(--border);
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .contact-form button[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .info-block h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .info-block p {
+    color: var(--white-2);
+    line-height: 1.8;
+    margin-bottom: 15px;
+  }
+
+  .info-block a {
+    color: var(--white-2);
+    transition: color 0.3s ease;
+  }
+
+  .info-block a:hover {
+    color: var(--gold);
+  }
+
+  .info-block strong {
+    color: var(--gold);
+    font-weight: 500;
+  }
+
+  .note {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--white-2);
+    transition: color 0.3s ease;
+  }
+
+  .social-link:hover {
+    color: var(--gold);
+  }
+
+  .social-link svg {
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 968px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .contact-form {
+      padding: 30px 20px;
+    }
+  }
+</style>
