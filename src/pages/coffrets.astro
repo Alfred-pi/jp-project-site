@@ -1,306 +1,190 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
-
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="Coffrets d'Exception — CSCO" description="Coffrets prestige alliant vodka HOVERLA et cigares Mont Noir. L'art de l'assemblage.">
-  <Nav current={`${base}/coffrets`} />
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__content fade-up">
-        <span class="label">PRESTIGE</span>
-        <h1>Coffrets d'Exception</h1>
-        <p class="hero__subtitle">L'union parfaite entre vodka artisanale et cigares premium.</p>
-      </div>
+<Layout title="Coffrets d'Exception | CSCO">
+  
+  <!-- HERO SIMPLE -->
+  <section class="hero-simple">
+    <div class="hero-simple__content">
+      <p class="t-label">Excellence & Élégance</p>
+      <div class="divider-gold" style="margin: 32px auto;"></div>
+      <h1 class="t-hero">COFFRETS<br>D'EXCEPTION</h1>
+      <p class="hero-simple__desc">L'alliance parfaite entre vodka artisanale et cigares premium.</p>
     </div>
   </section>
 
-  <!-- Coffret Découverte -->
-  <section class="coffret">
-    <div class="coffret__grid">
-      <div class="coffret__image">
-        <img src={`${base}/images/csco-coffrets-cigare.jpg`} alt="Coffret Découverte" />
-      </div>
-      <div class="coffret__content">
-        <span class="label fade-up">COFFRET</span>
-        <h2 class="fade-up">Découverte</h2>
-        <div class="divider fade-up"></div>
-        <p class="fade-up">
-          Une introduction élégante à l'univers CSCO. Ce coffret réunit une sélection de mignonnettes HOVERLA (3 saveurs) et deux cigares Mont Noir.
-        </p>
-        
-        <div class="coffret__detail fade-up">
-          <h4>Contenu :</h4>
-          <ul>
-            <li>3 mignonnettes HOVERLA (50ml) : Pure, Apple, Peach</li>
-            <li>2 cigares Mont Noir</li>
-            <li>Écrin bois laqué noir avec finitions dorées</li>
-          </ul>
+  <!-- LES COFFRETS -->
+  <section class="coffrets-grid">
+    <div class="coffrets-grid__container">
+      
+      <!-- Coffret 1 -->
+      <div class="coffret-card">
+        <div class="coffret-card__img">
+          <img src={`${base}/images/csco-coffrets-cigare.jpg`} alt="Coffret Prestige">
         </div>
-
-        <p class="coffret__price fade-up">Sur commande</p>
-        <a href={`${base}/contact`} class="btn btn-gold fade-up">Commander</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Coffret Prestige -->
-  <section class="coffret coffret--reverse">
-    <div class="coffret__grid">
-      <div class="coffret__content">
-        <span class="label fade-up">COFFRET</span>
-        <h2 class="fade-up">Prestige</h2>
-        <div class="divider fade-up"></div>
-        <p class="fade-up">
-          L'excellence en grand format. Une bouteille HOVERLA 70cl au choix, accompagnée de quatre cigares Mont Noir dans un coffret haut de gamme.
-        </p>
-        
-        <div class="coffret__detail fade-up">
-          <h4>Contenu :</h4>
-          <ul>
-            <li>1 bouteille HOVERLA 70cl (saveur au choix)</li>
-            <li>4 cigares Mont Noir</li>
-            <li>Coffret bois massif doublé velours</li>
-            <li>Cave à cigares intégrée</li>
-          </ul>
+        <div class="coffret-card__content">
+          <h3>COFFRET PRESTIGE</h3>
+          <p>1 bouteille HOVERLA Pure 70cl + 3 cigares Mont Noir + verre gravé + coffret bois premium</p>
+          <a href={`${base}/contact`} class="btn-primary">Demander un devis</a>
         </div>
+      </div>
 
-        <p class="coffret__price fade-up">Sur commande</p>
-        <a href={`${base}/contact`} class="btn btn-gold fade-up">Commander</a>
-      </div>
-      <div class="coffret__image">
-        <img src={`${base}/images/csco-coffret-ouvert.jpg`} alt="Coffret Prestige" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Coffret Collectionneur -->
-  <section class="coffret">
-    <div class="coffret__grid">
-      <div class="coffret__image">
-        <img src={`${base}/images/csco-coffret-promo.jpg`} alt="Coffret Collectionneur" />
-      </div>
-      <div class="coffret__content">
-        <span class="label fade-up">COFFRET</span>
-        <h2 class="fade-up">Collectionneur</h2>
-        <div class="divider fade-up"></div>
-        <p class="fade-up">
-          La quintessence CSCO. La gamme complète HOVERLA (7 saveurs en 70cl) et une sélection de 10 cigares Mont Noir dans un meuble dédié.
-        </p>
-        
-        <div class="coffret__detail fade-up">
-          <h4>Contenu :</h4>
-          <ul>
-            <li>7 bouteilles HOVERLA 70cl (gamme complète)</li>
-            <li>10 cigares Mont Noir</li>
-            <li>Meuble bois noble avec compartiments individuels</li>
-            <li>Humidificateur intégré pour cigares</li>
-            <li>Certificat d'authenticité numéroté</li>
-          </ul>
+      <!-- Coffret 2 -->
+      <div class="coffret-card">
+        <div class="coffret-card__img">
+          <img src={`${base}/images/csco-coffret-ouvert.jpg`} alt="Coffret Découverte">
         </div>
-
-        <p class="coffret__price fade-up">Édition limitée — Sur commande</p>
-        <a href={`${base}/contact`} class="btn btn-gold fade-up">Commander</a>
+        <div class="coffret-card__content">
+          <h3>COFFRET DÉCOUVERTE</h3>
+          <p>7 mignonnettes HOVERLA (gamme complète) + 2 cigares Mont Noir + verre gravé + écrin velours</p>
+          <a href={`${base}/contact`} class="btn-primary">Demander un devis</a>
+        </div>
       </div>
+
+      <!-- Coffret 3 -->
+      <div class="coffret-card">
+        <div class="coffret-card__img">
+          <img src={`${base}/images/hoverla-gamme-bar.jpg`} alt="Coffret Collection">
+        </div>
+        <div class="coffret-card__content">
+          <h3>COFFRET COLLECTION</h3>
+          <p>3 bouteilles HOVERLA (Pure, Pineapple, Red Berry) + 6 cigares Mont Noir + coffret bois signature</p>
+          <a href={`${base}/contact`} class="btn-primary">Demander un devis</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- CTA Personnalisation -->
-  <section class="personnalisation section-padding">
-    <div class="container container--narrow">
-      <div class="personnalisation__content fade-up">
-        <span class="label">PERSONNALISATION</span>
-        <h2>Coffret Sur Mesure</h2>
-        <div class="divider"></div>
-        <p>
-          Créez votre propre coffret CSCO. Choisissez vos saveurs HOVERLA, le nombre de cigares, et la finition de l'écrin.
-        </p>
-        <a href={`${base}/contact`} class="btn btn-ghost">Demander un devis</a>
-      </div>
+  <!-- PERSONNALISATION -->
+  <section class="personnalisation">
+    <div class="personnalisation__content">
+      <h2 class="t-section" style="margin-bottom: 24px;">Coffrets sur mesure</h2>
+      <p class="t-body" style="max-width: 700px; margin: 0 auto 40px;">
+        Vous souhaitez un coffret personnalisé pour un événement, un cadeau corporate ou une occasion spéciale ?<br>
+        Nous créons des coffrets sur mesure adaptés à vos besoins.
+      </p>
+      <a href={`${base}/contact`} class="btn-secondary">Nous contacter</a>
     </div>
   </section>
 
-  <Footer />
 </Layout>
 
 <style>
-  /* ========================================
-     HERO
-     ======================================== */
-  .hero {
-    background: var(--bg);
-    padding: 200px 0 120px;
-    margin-top: 72px;
+  /* HERO SIMPLE */
+  .hero-simple {
+    background: var(--black);
+    padding: 180px 40px 120px;
     text-align: center;
   }
 
-  .hero__content {
+  .hero-simple__content {
     max-width: 800px;
     margin: 0 auto;
   }
 
-  .hero h1 {
-    margin: 16px 0 24px;
+  .hero-simple__desc {
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--white-60);
+    margin-top: 32px;
   }
 
-  .hero__subtitle {
-    font-size: 18px;
-    color: var(--white-dim);
+  /* COFFRETS GRID */
+  .coffrets-grid {
+    background: var(--cream);
+    padding: 120px 40px;
   }
 
-  /* ========================================
-     SECTION COFFRET
-     ======================================== */
-  .coffret {
-    background: var(--bg);
-    padding: 80px 0;
-  }
-
-  .coffret:nth-of-type(even) {
-    background: var(--bg-warm);
-  }
-
-  .coffret__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    max-width: 1400px;
+  .coffrets-grid__container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
   }
 
-  .coffret--reverse .coffret__grid {
-    direction: rtl;
+  .coffret-card {
+    background: var(--white);
+    overflow: hidden;
+    transition: transform 0.4s ease;
   }
 
-  .coffret--reverse .coffret__content {
-    direction: ltr;
+  .coffret-card:hover {
+    transform: translateY(-8px);
   }
 
-  .coffret__image img {
+  .coffret-card__img {
     width: 100%;
-    height: auto;
-    border-radius: 4px;
+    height: 280px;
+    overflow: hidden;
   }
 
-  .coffret__content h2 {
-    margin: 16px 0 32px;
+  .coffret-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
   }
 
-  .coffret__content p {
-    margin-bottom: 24px;
+  .coffret-card:hover .coffret-card__img img {
+    transform: scale(1.05);
   }
 
-  .coffret__detail {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 24px;
-    border-left: 2px solid var(--gold);
-    margin: 32px 0;
-  }
-
-  .coffret__detail h4 {
-    font-family: var(--font-body);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 16px;
-  }
-
-  .coffret__detail ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .coffret__detail li {
-    font-size: 14px;
-    color: var(--white-dim);
-    margin-bottom: 8px;
-    padding-left: 20px;
-    position: relative;
-  }
-
-  .coffret__detail li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--gold);
-  }
-
-  .coffret__price {
-    font-family: var(--font-display);
-    font-size: 18px;
-    font-style: italic;
-    color: var(--gold);
-    margin: 24px 0 32px;
-  }
-
-  /* ========================================
-     SECTION PERSONNALISATION
-     ======================================== */
-  .personnalisation {
-    background: var(--bg-cream);
+  .coffret-card__content {
+    padding: 32px;
     text-align: center;
   }
 
-  .personnalisation__content h2 {
-    color: var(--bg);
-    margin: 16px 0 32px;
+  .coffret-card__content h3 {
+    font-family: var(--display);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: 16px;
   }
 
-  .personnalisation__content .label {
-    color: var(--bg-warm);
+  .coffret-card__content p {
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-warm);
+    margin-bottom: 24px;
   }
 
-  .personnalisation__content p {
-    color: rgba(13, 10, 6, 0.7);
-    margin-bottom: 32px;
+  /* PERSONNALISATION */
+  .personnalisation {
+    background: var(--black);
+    padding: 120px 40px;
+    text-align: center;
   }
 
-  .personnalisation__content .btn {
-    color: var(--bg);
-    border-color: var(--bg);
+  .personnalisation__content .t-body {
+    color: var(--white-60);
   }
 
-  .personnalisation__content .btn:hover {
-    background: var(--bg);
-    color: var(--bg-cream);
-  }
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .hero-simple {
+      padding: 140px 32px 80px;
+    }
 
-  /* ========================================
-     RESPONSIVE
-     ======================================== */
-  @media (max-width: 1024px) {
-    .coffret__grid {
+    .coffrets-grid {
+      padding: 80px 32px;
+    }
+
+    .coffrets-grid__container {
       grid-template-columns: 1fr;
       gap: 40px;
     }
 
-    .coffret--reverse .coffret__grid {
-      direction: ltr;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      padding: 160px 0 80px;
-      margin-top: 64px;
-    }
-
-    .coffret {
-      padding: 60px 0;
-    }
-
-    .coffret__grid {
-      padding: 0 24px;
+    .personnalisation {
+      padding: 80px 32px;
     }
   }
 </style>

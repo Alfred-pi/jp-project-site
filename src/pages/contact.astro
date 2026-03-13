@@ -1,197 +1,126 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
-
-const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="Contact — CSCO" description="Contactez-nous pour toute demande d'information ou commande de coffret d'exception.">
-  <Nav current={`${base}/contact`} />
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__content fade-up">
-        <span class="label">CONTACT</span>
-        <h1>Nous Contacter</h1>
-        <p class="hero__subtitle">Pour toute demande d'information, commande de coffret ou question sur nos produits, nous sommes à votre écoute.</p>
-      </div>
+<Layout title="Contact | CSCO">
+  
+  <!-- HERO CONTACT -->
+  <section class="hero-contact">
+    <div class="hero-contact__content">
+      <p class="t-label">Entrons en contact</p>
+      <div class="divider-gold" style="margin: 32px auto;"></div>
+      <h1 class="t-hero">PARLONS<br>EXCELLENCE</h1>
+      <p class="hero-contact__desc">Coffrets sur mesure, commandes spéciales, partenariats ou simplement une question ?<br>Nous sommes à votre écoute.</p>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="contact section-padding">
-    <div class="container">
-      <div class="contact__grid">
-        <!-- Informations -->
-        <div class="contact__info">
-          <div class="contact__block fade-up">
-            <h3>Email</h3>
-            <p><a href="mailto:contact@csco-spirits.com">contact@csco-spirits.com</a></p>
+  <!-- FORMULAIRE -->
+  <section class="contact-form-section">
+    <div class="contact-container">
+      
+      <!-- Formulaire -->
+      <div class="contact-form">
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" required>
           </div>
 
-          <div class="contact__block fade-up">
-            <h3>Téléphone</h3>
-            <p><a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
           </div>
 
-          <div class="contact__block fade-up">
-            <h3>Adresse</h3>
-            <p>
-              CSCO Spirits<br>
-              123 Avenue des Champs-Élysées<br>
-              75008 Paris, France
-            </p>
+          <div class="form-group">
+            <label for="phone">Téléphone (optionnel)</label>
+            <input type="tel" id="phone" name="phone">
           </div>
 
-          <div class="contact__block fade-up">
-            <h3>Réseaux Sociaux</h3>
-            <div class="contact__social">
-              <a href="https://instagram.com/hoverla.vodka" target="_blank" rel="noopener">Instagram</a>
-              <a href="https://facebook.com/hoverlavodka" target="_blank" rel="noopener">Facebook</a>
-            </div>
+          <div class="form-group">
+            <label for="subject">Sujet</label>
+            <select id="subject" name="subject" required>
+              <option value="">Sélectionnez un sujet</option>
+              <option value="coffret">Coffrets sur mesure</option>
+              <option value="commande">Commande spéciale</option>
+              <option value="partenariat">Partenariat</option>
+              <option value="autre">Autre demande</option>
+            </select>
           </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">Envoyer le message</button>
+        </form>
+      </div>
+
+      <!-- Informations -->
+      <div class="contact-info">
+        <h3>CSCO</h3>
+        <p>Excellence & Élégance</p>
+        
+        <div class="contact-info__block">
+          <p class="t-label">Email</p>
+          <a href="mailto:contact@csco-luxury.com">contact@csco-luxury.com</a>
         </div>
 
-        <!-- Formulaire -->
-        <div class="contact__form fade-up">
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden">
-              <label>Ne pas remplir : <input name="bot-field" /></label>
-            </p>
+        <div class="contact-info__block">
+          <p class="t-label">Instagram</p>
+          <a href="https://instagram.com/hoverla.vodka" target="_blank" rel="noopener noreferrer">@hoverla.vodka</a>
+        </div>
 
-            <div class="form-group">
-              <label for="name">Nom complet *</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Téléphone</label>
-              <input type="tel" id="phone" name="phone" />
-            </div>
-
-            <div class="form-group">
-              <label for="subject">Sujet *</label>
-              <select id="subject" name="subject" required>
-                <option value="">Choisissez un sujet</option>
-                <option value="coffret">Commande de coffret</option>
-                <option value="info-vodka">Information Vodka HOVERLA</option>
-                <option value="info-cigares">Information Cigares Mont Noir</option>
-                <option value="personnalisation">Coffret personnalisé</option>
-                <option value="autre">Autre demande</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-gold">Envoyer</button>
-          </form>
+        <div class="contact-info__block">
+          <p class="t-label">Horaires</p>
+          <p>Lun - Ven : 9h - 18h<br>Sam : 10h - 16h</p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <Footer />
 </Layout>
 
 <style>
-  .hidden {
-    display: none;
-  }
-
-  /* ========================================
-     HERO
-     ======================================== */
-  .hero {
-    background: var(--bg);
-    padding: 200px 0 120px;
-    margin-top: 72px;
+  /* HERO CONTACT */
+  .hero-contact {
+    background: var(--black);
+    padding: 180px 40px 100px;
     text-align: center;
   }
 
-  .hero__content {
+  .hero-contact__content {
     max-width: 800px;
     margin: 0 auto;
   }
 
-  .hero h1 {
-    margin: 16px 0 24px;
+  .hero-contact__desc {
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--white-60);
+    margin-top: 32px;
   }
 
-  .hero__subtitle {
-    font-size: 16px;
-    color: var(--white-dim);
+  /* FORMULAIRE */
+  .contact-form-section {
+    background: var(--cream);
+    padding: 100px 40px;
   }
 
-  /* ========================================
-     SECTION CONTACT
-     ======================================== */
-  .contact {
-    background: var(--bg);
-  }
-
-  .contact__grid {
+  .contact-container {
+    max-width: 1100px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: 80px;
   }
 
-  /* Informations */
-  .contact__info {
-    display: flex;
-    flex-direction: column;
-    gap: 48px;
-  }
-
-  .contact__block h3 {
-    font-family: var(--font-display);
-    font-size: 24px;
-    font-weight: 300;
-    color: var(--gold);
-    margin-bottom: 12px;
-  }
-
-  .contact__block p,
-  .contact__block a {
-    font-size: 15px;
-    color: var(--white-dim);
-    line-height: 1.8;
-  }
-
-  .contact__block a:hover {
-    color: var(--gold);
-  }
-
-  .contact__social {
-    display: flex;
-    gap: 24px;
-  }
-
-  .contact__social a {
-    font-size: 14px;
-    color: var(--white-dim);
-    transition: color 0.3s ease;
-  }
-
-  .contact__social a:hover {
-    color: var(--gold);
-  }
-
-  /* Formulaire */
-  .contact__form {
-    background: rgba(255, 255, 255, 0.05);
+  .contact-form {
+    background: var(--white);
     padding: 48px;
-    border: 1px solid var(--border);
   }
 
   .form-group {
@@ -200,12 +129,12 @@ const base = import.meta.env.BASE_URL;
 
   .form-group label {
     display: block;
-    font-family: var(--font-body);
+    font-family: var(--body);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--text-dark);
     margin-bottom: 8px;
   }
 
@@ -213,12 +142,12 @@ const base = import.meta.env.BASE_URL;
   .form-group select,
   .form-group textarea {
     width: 100%;
-    background: rgba(8, 8, 8, 0.6);
-    border: 1px solid var(--border);
-    color: var(--white);
-    font-family: var(--font-body);
-    font-size: 14px;
     padding: 14px 16px;
+    border: 1px solid rgba(26, 26, 26, 0.2);
+    background: var(--white);
+    font-family: var(--body);
+    font-size: 14px;
+    color: var(--text-dark);
     transition: border-color 0.3s ease;
   }
 
@@ -231,36 +160,96 @@ const base = import.meta.env.BASE_URL;
 
   .form-group textarea {
     resize: vertical;
-    min-height: 120px;
   }
 
-  .contact__form button {
-    width: 100%;
-    margin-top: 16px;
+  /* CONTACT INFO */
+  .contact-info {
+    padding-top: 20px;
   }
 
-  /* ========================================
-     RESPONSIVE
-     ======================================== */
-  @media (max-width: 1024px) {
-    .contact__grid {
-      grid-template-columns: 1fr;
-      gap: 60px;
-    }
+  .contact-info h3 {
+    font-family: var(--display);
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: 8px;
   }
 
+  .contact-info > p {
+    font-family: var(--body);
+    font-size: 13px;
+    color: var(--text-warm);
+    margin-bottom: 40px;
+  }
+
+  .contact-info__block {
+    margin-bottom: 32px;
+  }
+
+  .contact-info__block .t-label {
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .contact-info__block a {
+    font-family: var(--body);
+    font-size: 15px;
+    color: var(--text-dark);
+    transition: color 0.3s ease;
+  }
+
+  .contact-info__block a:hover {
+    color: var(--gold);
+  }
+
+  .contact-info__block p {
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-warm);
+  }
+
+  /* MOBILE */
   @media (max-width: 768px) {
-    .hero {
-      padding: 160px 0 80px;
-      margin-top: 64px;
+    .hero-contact {
+      padding: 140px 32px 80px;
     }
 
-    .contact__form {
-      padding: 32px 24px;
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 40px;
     }
 
-    .contact__info {
-      gap: 32px;
+    .contact-form {
+      padding: 32px;
+    }
+
+    .contact-form-section {
+      padding: 80px 32px;
     }
   }
 </style>
+
+<script>
+  const form = document.getElementById('contact-form');
+  
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      // Récupération des données
+      const formData = new FormData(form as HTMLFormElement);
+      const data = Object.fromEntries(formData.entries());
+      
+      // Simulation d'envoi (remplacer par vraie API)
+      console.log('Form data:', data);
+      
+      // Message de confirmation
+      alert('Merci pour votre message. Nous vous répondrons dans les plus brefs délais.');
+      
+      // Reset du formulaire
+      (form as HTMLFormElement).reset();
+    });
+  }
+</script>

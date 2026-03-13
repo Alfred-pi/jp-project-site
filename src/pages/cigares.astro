@@ -1,292 +1,181 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
-
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="MONT NOIR — Cigares d'Exception" description="Cigares premium, exclusivité CSCO × Vegas Corporan. Excellence cubaine.">
-  <Nav current={`${base}/cigares`} />
-
-  <!-- Hero Full-Bleed 100vh -->
-  <section class="hero">
-    <div class="hero__image">
-      <img src={`${base}/images/hoverla-cigare-gros-plan.jpg`} alt="Cigare Mont Noir" class="img-cover" />
-    </div>
-    <div class="hero__overlay">
-      <h1 class="hero__title fade-up">MONT NOIR</h1>
-      <p class="hero__subtitle fade-up">Excellence Cubaine</p>
-    </div>
-    <div class="scroll-indicator">
-      <svg viewBox="0 0 24 24" fill="none">
-        <path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+<Layout title="MONT NOIR — Cigares Premium | CSCO">
+  
+  <!-- HERO -->
+  <section class="hero-page">
+    <img src={`${base}/images/hoverla-cigare-gros-plan.jpg`} alt="Cigares Mont Noir" class="hero-page__bg">
+    <div class="hero-page__overlay"></div>
+    <div class="hero-page__content">
+      <h1 class="hero-page__title">MONT NOIR</h1>
+      <p class="hero-page__subtitle">Cigares Premium · Édition Exclusive</p>
     </div>
   </section>
 
-  <!-- Section Histoire -->
-  <section class="histoire section-padding">
-    <div class="container container--narrow">
-      <span class="label fade-up">EXCLUSIVITÉ CSCO × VEGAS CORPORAN</span>
-      <h2 class="fade-up">L'Art du Cigare Premium</h2>
-      <div class="divider fade-up"></div>
-      <p class="fade-up">
-        Né d'une collaboration exclusive entre CSCO et le maître cigarier Vegas Corporan, Mont Noir incarne l'excellence cubaine.
-      </p>
-      <p class="fade-up">
-        Chaque cigare est roulé à la main selon la tradition séculaire de La Havane. Feuilles sélectionnées, fermentation lente, vieillissement en cave : chaque étape est un hommage au savoir-faire ancestral.
-      </p>
-    </div>
-  </section>
-
-  <!-- Section Produit (Image Droite) -->
-  <section class="produit">
-    <div class="produit__grid">
-      <div class="produit__content">
-        <span class="label fade-up">CARACTÉRISTIQUES</span>
-        <h2 class="fade-up">Dégustation</h2>
-        <div class="divider fade-up"></div>
-        
-        <div class="produit__detail fade-up">
-          <h3>Nez</h3>
-          <p>Arômes boisés et épicés, notes de cèdre et de cuir fin.</p>
-        </div>
-        
-        <div class="produit__detail fade-up">
-          <h3>Bouche</h3>
-          <p>Corps équilibré, saveurs de café torréfié et de cacao amer.</p>
-        </div>
-        
-        <div class="produit__detail fade-up">
-          <h3>Finale</h3>
-          <p>Persistance élégante, touche de miel et d'épices douces.</p>
-        </div>
-      </div>
-      
-      <div class="produit__image">
-        <img src={`${base}/images/csco-coffret-ouvert.jpg`} alt="Coffret Mont Noir" class="img-cover" />
+  <!-- L'ÉDITION -->
+  <section class="edition">
+    <div class="edition__container">
+      <p class="t-label">CSCO × Vegas Corporan</p>
+      <div class="divider-gold" style="margin: 32px 0;"></div>
+      <h2 class="t-section" style="margin-bottom: 32px;">Une collaboration<br>d'exception</h2>
+      <div class="edition__content">
+        <p>Mont Noir est né d'une rencontre entre l'excellence de CSCO et le savoir-faire artisanal de Vegas Corporan, maître cigare reconnu.</p>
+        <p>Chaque cigare est roulé à la main, avec des feuilles de tabac sélectionnées parmi les meilleures plantations. Une expérience sensorielle unique qui complète parfaitement la dégustation de vodka HOVERLA.</p>
+        <p>Mont Noir n'est pas simplement un cigare. C'est une déclaration d'intention, un moment suspendu, une célébration du raffinement.</p>
       </div>
     </div>
   </section>
 
-  <!-- Section Artisanat -->
-  <section class="artisanat section-padding">
-    <div class="container">
-      <div class="artisanat__grid">
-        <div class="artisanat__col fade-up">
-          <h3>Roulage à la Main</h3>
-          <p>Chaque cigare est façonné par des torcedores expérimentés, garants d'une qualité irréprochable.</p>
-        </div>
-        <div class="artisanat__col fade-up">
-          <h3>Fermentation Lente</h3>
-          <p>Les feuilles subissent une fermentation contrôlée pour développer leurs arômes complexes.</p>
-        </div>
-        <div class="artisanat__col fade-up">
-          <h3>Vieillissement en Cave</h3>
-          <p>Plusieurs années de maturation dans nos caves climatisées pour une harmonie parfaite.</p>
-        </div>
+  <!-- L'EXPÉRIENCE -->
+  <section class="experience">
+    <div class="experience__grid">
+      <div class="experience__img">
+        <img src={`${base}/images/csco-coffret-ouvert.jpg`} alt="Coffret Mont Noir">
+      </div>
+      <div class="experience__text">
+        <h2 class="t-section" style="margin-bottom: 24px;">L'expérience<br>Mont Noir</h2>
+        <p>Nos coffrets associent cigares premium et vodka artisanale dans un écrin pensé pour les connaisseurs.</p>
+        <p>Chaque détail compte : du packaging élégant à la qualité des produits, tout est conçu pour offrir un moment inoubliable.</p>
+        <a href={`${base}/coffrets`} class="btn-primary" style="margin-top: 32px;">Découvrir les coffrets</a>
       </div>
     </div>
   </section>
 
-  <!-- CTA Contact -->
-  <section class="cta section-padding">
-    <div class="container container--narrow">
-      <div class="cta__content fade-up">
-        <span class="label">DÉCOUVRIR</span>
-        <h2>Commandez Vos Cigares</h2>
-        <p>Disponibles en édition limitée. Contactez-nous pour une expérience personnalisée.</p>
-        <a href={`${base}/contact`} class="btn btn-gold">Nous contacter</a>
-      </div>
+  <!-- CTA -->
+  <section class="cta-contact">
+    <div class="cta-contact__content">
+      <h2 class="t-section" style="margin-bottom: 24px;">Intéressé ?</h2>
+      <p class="t-body" style="max-width: 600px; margin: 0 auto 40px;">Contactez-nous pour plus d'informations sur nos cigares et nos coffrets exclusifs.</p>
+      <a href={`${base}/contact`} class="btn-primary">Nous contacter</a>
     </div>
   </section>
 
-  <Footer />
 </Layout>
 
 <style>
-  /* ========================================
-     HERO FULL-BLEED 100vh
-     ======================================== */
-  .hero {
+  /* HERO */
+  .hero-page {
     position: relative;
-    height: 100vh;
-    margin-top: 72px;
+    height: 90svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
   }
 
-  .hero__image {
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero__overlay {
+  .hero-page__bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: rgba(13, 10, 6, 0.5);
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hero-page__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 8, 0.5);
+    z-index: 1;
+  }
+
+  .hero-page__content {
+    position: relative;
+    z-index: 2;
     text-align: center;
   }
 
-  .hero__title {
-    font-size: clamp(72px, 12vw, 96px);
+  .hero-page__title {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(72px, 10vw, 120px);
+    line-height: 0.9;
     color: var(--white);
     margin-bottom: 16px;
   }
 
-  .hero__subtitle {
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 300;
+  .hero-page__subtitle {
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 400;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--gold);
   }
 
-  /* ========================================
-     SECTION HISTOIRE
-     ======================================== */
-  .histoire {
-    background: var(--bg);
-    text-align: center;
+  /* ÉDITION */
+  .edition {
+    background: var(--black-warm);
+    padding: 120px 40px;
   }
 
-  .histoire h2 {
-    margin: 16px 0 32px;
+  .edition__container {
+    max-width: 800px;
+    margin: 0 auto;
   }
 
-  .histoire p {
+  .edition__content p {
+    font-family: var(--body);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.9;
+    color: var(--white-60);
     margin-bottom: 24px;
   }
 
-  /* ========================================
-     SECTION PRODUIT (Image Droite)
-     ======================================== */
-  .produit {
-    background: var(--bg-warm);
+  /* EXPÉRIENCE */
+  .experience {
+    background: var(--cream);
+    padding: 120px 40px;
   }
 
-  .produit__grid {
+  .experience__grid {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
   }
 
-  .produit__content {
-    padding: 100px 60px;
+  .experience__img img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
-  .produit__content h2 {
-    margin: 16px 0 32px;
+  .experience__text h2 {
+    color: var(--text-dark);
   }
 
-  .produit__detail {
-    margin-bottom: 32px;
-  }
-
-  .produit__detail h3 {
-    font-family: var(--font-display);
-    font-size: 24px;
-    font-weight: 300;
-    color: var(--gold);
-    margin-bottom: 8px;
-  }
-
-  .produit__detail p {
+  .experience__text p {
+    font-family: var(--body);
     font-size: 15px;
-    line-height: 1.8;
-    margin: 0;
-  }
-
-  .produit__image {
-    height: 100%;
-    min-height: 600px;
-  }
-
-  /* ========================================
-     SECTION ARTISANAT
-     ======================================== */
-  .artisanat {
-    background: var(--bg);
-  }
-
-  .artisanat__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-  }
-
-  .artisanat__col {
-    text-align: center;
-  }
-
-  .artisanat__col h3 {
-    font-family: var(--font-display);
-    font-size: 28px;
     font-weight: 300;
-    color: var(--gold);
+    line-height: 1.9;
+    color: var(--text-warm);
     margin-bottom: 16px;
   }
 
-  .artisanat__col p {
-    font-size: 15px;
-    line-height: 1.8;
-  }
-
-  /* ========================================
-     SECTION CTA
-     ======================================== */
-  .cta {
-    background: var(--bg);
+  /* CTA CONTACT */
+  .cta-contact {
+    background: var(--black);
+    padding: 120px 40px;
     text-align: center;
   }
 
-  .cta__content h2 {
-    margin: 16px 0 24px;
-  }
-
-  .cta__content p {
-    margin-bottom: 32px;
-  }
-
-  /* ========================================
-     RESPONSIVE
-     ======================================== */
-  @media (max-width: 1024px) {
-    .produit__grid {
-      grid-template-columns: 1fr;
-    }
-
-    .produit__image {
-      height: 400px;
-      min-height: 400px;
-    }
-
-    .artisanat__grid {
+  /* MOBILE */
+  @media (max-width: 768px) {
+    .experience__grid {
       grid-template-columns: 1fr;
       gap: 40px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .hero {
-      margin-top: 64px;
-      height: 80vh;
-    }
-
-    .produit__content {
-      padding: 60px 24px;
-    }
-
-    .produit__image {
-      height: 300px;
-      min-height: 300px;
     }
   }
 </style>
