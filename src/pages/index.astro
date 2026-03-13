@@ -58,72 +58,30 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <!-- Section: Gamme 7 saveurs (Cards Minimalistes) -->
+  <!-- Section: Gamme 7 saveurs (Bottles) -->
   <section class="gamme section-padding">
     <div class="container">
+      <span class="label" style="display:block;text-align:center;margin-bottom:16px">LA GAMME</span>
+      <h2 class="gamme__title fade-up" style="text-align:center;margin-bottom:60px">Sept expressions</h2>
       <div class="gamme__grid">
-        <!-- Pure -->
-        <div class="gamme__card fade-up">
-          <svg width="80" height="80" viewBox="0 0 80 80">
-            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#C8A84E" stroke-width="1.5"/>
-          </svg>
-          <h3 class="gamme__name">Pure</h3>
-          <p class="gamme__desc">Caractère authentique</p>
-        </div>
-
-        <!-- Apple -->
-        <div class="gamme__card fade-up">
-          <svg width="80" height="80" viewBox="0 0 80 80">
-            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#7BC67E" stroke-width="1.5"/>
-          </svg>
-          <h3 class="gamme__name">Apple</h3>
-          <p class="gamme__desc">Fraîcheur fruitée</p>
-        </div>
-
-        <!-- Pineapple -->
-        <div class="gamme__card fade-up">
-          <svg width="80" height="80" viewBox="0 0 80 80">
-            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#F5C842" stroke-width="1.5"/>
-          </svg>
-          <h3 class="gamme__name">Pineapple</h3>
-          <p class="gamme__desc">Exotisme tropical</p>
-        </div>
-
-        <!-- Acai Berry -->
-        <div class="gamme__card fade-up">
-          <svg width="80" height="80" viewBox="0 0 80 80">
-            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#7B4FA6" stroke-width="1.5"/>
-          </svg>
-          <h3 class="gamme__name">Acai Berry</h3>
-          <p class="gamme__desc">Intensité sauvage</p>
-        </div>
-
-        <!-- Peach -->
-        <div class="gamme__card fade-up">
-          <svg width="80" height="80" viewBox="0 0 80 80">
-            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#F4A460" stroke-width="1.5"/>
-          </svg>
-          <h3 class="gamme__name">Peach</h3>
-          <p class="gamme__desc">Douceur veloutée</p>
-        </div>
-
-        <!-- Coconut -->
-        <div class="gamme__card fade-up">
-          <svg width="80" height="80" viewBox="0 0 80 80">
-            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#8B6347" stroke-width="1.5"/>
-          </svg>
-          <h3 class="gamme__name">Coconut</h3>
-          <p class="gamme__desc">Onctuosité crémeuse</p>
-        </div>
-
-        <!-- Red Berry -->
-        <div class="gamme__card fade-up">
-          <svg width="80" height="80" viewBox="0 0 80 80">
-            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#C0392B" stroke-width="1.5"/>
-          </svg>
-          <h3 class="gamme__name">Red Berry</h3>
-          <p class="gamme__desc">Élégance acidulée</p>
-        </div>
+        {[
+          { img: 'hoverla-official-1.jpg', name: 'Pure',      desc: 'Caractère authentique', color: '#C8A84E' },
+          { img: 'hoverla-official-2.jpg', name: 'Apple',     desc: 'Fraîcheur fruitée',      color: '#7BC67E' },
+          { img: 'hoverla-official-3.jpg', name: 'Pineapple', desc: 'Exotisme tropical',      color: '#F5C842' },
+          { img: 'hoverla-official-4.jpg', name: 'Acai Berry',desc: 'Intensité sauvage',      color: '#7B4FA6' },
+          { img: 'hoverla-official-5.jpg', name: 'Peach',     desc: 'Douceur veloutée',       color: '#F4A460' },
+          { img: 'hoverla-official-6.jpg', name: 'Coconut',   desc: 'Onctuosité crémeuse',    color: '#8B6347' },
+          { img: 'hoverla-official-7.jpg', name: 'Red Berry', desc: 'Élégance acidulée',      color: '#C0392B' },
+        ].map(({ img, name, desc, color }) => (
+          <div class="gamme__card fade-up">
+            <div class="gamme__bottle-wrap">
+              <img src={`${base}/images/${img}`} alt={`HOVERLA ${name}`} class="gamme__bottle" />
+              <div class="gamme__color-bar" style={`background:${color}`}></div>
+            </div>
+            <h3 class="gamme__name">{name}</h3>
+            <p class="gamme__desc">{desc}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -269,34 +227,72 @@ const base = import.meta.env.BASE_URL;
 
   .gamme__card {
     background: #111;
-    height: 320px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 24px;
+    gap: 16px;
+    padding: 32px 16px 24px;
     transition: all 0.4s ease;
     border: 1px solid transparent;
+    cursor: default;
   }
 
   .gamme__card:hover {
     background: #1a1a1a;
     border-color: var(--gold);
+    transform: translateY(-4px);
+  }
+
+  .gamme__bottle-wrap {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gamme__bottle {
+    height: 180px;
+    width: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 8px 24px rgba(0,0,0,0.6));
+    transition: transform 0.4s ease;
+  }
+
+  .gamme__card:hover .gamme__bottle {
+    transform: scale(1.05);
+  }
+
+  .gamme__color-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px;
+    opacity: 0.7;
+    border-radius: 1px;
   }
 
   .gamme__name {
     font-family: var(--font-display);
-    font-size: 28px;
+    font-size: 22px;
     font-weight: 300;
     color: var(--white);
     margin: 0;
+    letter-spacing: 0.05em;
   }
 
   .gamme__desc {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 300;
     color: var(--white-dim);
     margin: 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
   }
 
   /* ========================================
