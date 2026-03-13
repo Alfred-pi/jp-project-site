@@ -1,161 +1,173 @@
 ---
 const base = import.meta.env.BASE_URL;
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="main-footer">
-  <div class="footer-container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <h3>CSCO</h3>
-        <p>Excellence & Élégance</p>
-        <p class="footer-tagline">by Jean-Philippe Guidicili</p>
+<footer class="footer">
+  <div class="footer__divider"></div>
+  
+  <div class="footer__container">
+    <div class="footer__grid">
+      <!-- Colonne 1: Branding -->
+      <div class="footer__brand">
+        <h3 class="footer__logo">CSCO</h3>
+        <p class="footer__tagline">Excellence & Élégance</p>
       </div>
 
-      <div class="footer-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href={base + '/vodka'}>Vodka HOVERLA</a></li>
-          <li><a href={base + '/cigares'}>Cigares Mont Noir</a></li>
-          <li><a href={base + '/coffrets'}>Coffrets</a></li>
-          <li><a href={base + '/contact'}>Contact</a></li>
+      <!-- Colonne 2: Navigation -->
+      <div class="footer__nav">
+        <h4 class="footer__title">Navigation</h4>
+        <ul class="footer__links">
+          <li><a href={base}>Accueil</a></li>
+          <li><a href={`${base}vodka`}>Vodka HOVERLA</a></li>
+          <li><a href={`${base}cigares`}>Cigares Mont Noir</a></li>
+          <li><a href={`${base}coffrets`}>Coffrets</a></li>
+          <li><a href={`${base}contact`}>Contact</a></li>
         </ul>
       </div>
 
-      <div class="footer-col">
-        <h4>HOVERLA Vodka</h4>
-        <ul>
-          <li><a href="https://www.hoverlavodka.com" target="_blank" rel="noopener">www.hoverlavodka.com</a></li>
-          <li><a href="mailto:contact@hoverlavodka.com">contact@hoverlavodka.com</a></li>
+      <!-- Colonne 3: Social & Contact -->
+      <div class="footer__social">
+        <h4 class="footer__title">Suivez-nous</h4>
+        <ul class="footer__links">
+          <li><a href="https://instagram.com/hoverla.vodka" target="_blank" rel="noopener">Instagram @hoverla.vodka</a></li>
+          <li><a href="https://facebook.com/hoverlavodka" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="mailto:contact@csco-spirits.com">contact@csco-spirits.com</a></li>
         </ul>
-        <div class="social-links">
-          <a href="https://www.instagram.com/hoverla.vodka" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-          <a href="https://www.facebook.com/hoverlavodka" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-            </svg>
-          </a>
-        </div>
       </div>
     </div>
 
-    <div class="footer-legal">
-      <p class="legal-warning">L'ABUS D'ALCOOL EST DANGEREUX POUR LA SANTÉ. À CONSOMMER AVEC MODÉRATION.</p>
-      <p class="copyright">&copy; {new Date().getFullYear()} CSCO. Tous droits réservés.</p>
+    <!-- Mention légale alcool -->
+    <div class="footer__legal">
+      <p>L'abus d'alcool est dangereux pour la santé. À consommer avec modération.</p>
+      <p>© {currentYear} CSCO by Jean-Philippe Guidicili. Tous droits réservés.</p>
     </div>
   </div>
 </footer>
 
 <style>
-  .main-footer {
-    background: var(--bg-2);
-    border-top: 1px solid var(--border);
-    margin-top: 80px;
+  .footer {
+    background: #080808;
+    color: var(--white-dim);
+    padding: 80px 0 40px;
   }
 
-  .footer-container {
-    max-width: 1200px;
+  .footer__divider {
+    width: 100%;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 80px;
+  }
+
+  .footer__container {
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 60px 40px 30px;
+    padding: 0 40px;
   }
 
-  .footer-grid {
+  .footer__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
   }
 
-  .footer-col h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
+  .footer__brand {
+    max-width: 400px;
   }
 
-  .footer-col h4 {
-    font-size: 16px;
+  .footer__logo {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
     color: var(--gold);
-    margin-bottom: 15px;
-    letter-spacing: 0.05em;
+    margin-bottom: 16px;
   }
 
-  .footer-col p {
-    color: var(--white-2);
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-  .footer-tagline {
+  .footer__tagline {
+    font-family: var(--font-display);
+    font-size: 18px;
     font-style: italic;
-    color: var(--text-muted);
-    margin-top: 5px;
+    font-weight: 300;
+    color: var(--white-dim);
   }
 
-  .footer-col ul {
+  .footer__title {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .footer__links {
     list-style: none;
+    padding: 0;
+    margin: 0;
   }
 
-  .footer-col ul li {
-    margin-bottom: 10px;
+  .footer__links li {
+    margin-bottom: 12px;
   }
 
-  .footer-col ul li a {
-    color: var(--white-2);
+  .footer__links a {
     font-size: 14px;
+    font-weight: 300;
+    color: var(--white-dim);
     transition: color 0.3s ease;
   }
 
-  .footer-col ul li a:hover {
+  .footer__links a:hover {
     color: var(--gold);
   }
 
-  .social-links {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-  }
-
-  .social-links a {
-    color: var(--gold);
-    transition: color 0.3s ease;
-  }
-
-  .social-links a:hover {
-    color: var(--gold-light);
-  }
-
-  .footer-legal {
+  .footer__legal {
+    padding-top: 40px;
     border-top: 1px solid var(--border);
-    padding-top: 30px;
     text-align: center;
   }
 
-  .legal-warning {
-    color: var(--text-muted);
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 15px;
+  .footer__legal p {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(245, 242, 236, 0.4);
+    margin-bottom: 8px;
   }
 
-  .copyright {
-    color: var(--text-muted);
-    font-size: 13px;
+  @media (max-width: 1024px) {
+    .footer__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .footer__brand {
+      max-width: 100%;
+    }
   }
 
   @media (max-width: 768px) {
-    .footer-container {
-      padding: 40px 20px 20px;
+    .footer {
+      padding: 60px 0 32px;
     }
 
-    .footer-grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
+    .footer__container {
+      padding: 0 24px;
+    }
+
+    .footer__divider {
+      margin-bottom: 60px;
+    }
+
+    .footer__logo {
+      font-size: 36px;
+    }
+
+    .footer__grid {
+      gap: 32px;
+      margin-bottom: 40px;
     }
   }
 </style>

@@ -4,78 +4,154 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
 const base = import.meta.env.BASE_URL;
-
-const saveurs = [
-  { name: 'Pure', color: '#C8A84E', description: 'La quintessence de la vodka ukrainienne' },
-  { name: 'Apple', color: '#7CB342', description: 'Fraîcheur et douceur de la pomme verte' },
-  { name: 'Pineapple', color: '#FDD835', description: 'Exotisme tropical et notes acidulées' },
-  { name: 'Acai Berry', color: '#7E57C2', description: 'Richesse et profondeur des baies d\'açaï' },
-  { name: 'Peach', color: '#FF8A65', description: 'Velours sucré de la pêche mûre' },
-  { name: 'Coconut', color: '#8D6E63', description: 'Onctuosité crémeuse de la noix de coco' },
-  { name: 'Red Berry', color: '#E53935', description: 'Intensité fruitée des baies rouges' }
-];
 ---
 
-<Layout title="Vodka HOVERLA – CSCO" description="Vodka artisanale ukrainienne d'exception. 5 fois distillée, 2 fois filtrée. Sept saveurs uniques inspirées des Carpates.">
-  <Nav />
+<Layout title="HOVERLA — Vodka Artisanale Ukrainienne" description="Vodka ukrainienne d'exception. Sept saveurs uniques, distillation artisanale.">
+  <Nav current={`${base}vodka`} />
 
-  <!-- Hero Section -->
-  <section class="hero-vodka">
-    <div class="hero-overlay"></div>
-    <div class="hero-content fade-up">
-      <h1>HOVERLA</h1>
-      <p class="hero-subtitle">Vodka Artisanale Ukrainienne</p>
+  <!-- Hero Full-Bleed -->
+  <section class="hero">
+    <div class="hero__image">
+      <img src={`${base}images/hoverla-gamme-bar.jpg`} alt="Gamme HOVERLA" class="img-cover" />
+    </div>
+    <div class="hero__overlay">
+      <h1 class="hero__title fade-up">HOVERLA</h1>
+      <p class="hero__subtitle fade-up">Vodka Artisanale Ukrainienne</p>
+    </div>
+    <div class="scroll-indicator">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
   </section>
 
-  <!-- Histoire Section -->
-  <section class="histoire">
-    <div class="histoire-content fade-up">
-      <h2>L'Esprit des Carpates</h2>
-      
-      <div class="legend-box">
-        <p class="legend-text">« Une ancienne légende existe à propos d'un trésor en or, caché au sommet de la montagne Hoverla, le point culminant de l'Ukraine. »</p>
-      </div>
-
-      <p>Inspirée par cette légende millénaire, la vodka HOVERLA puise son excellence dans les eaux pures des sources des Carpates et le meilleur blé ukrainien. Chaque bouteille incarne la quête de perfection et le trésor caché de ce terroir d'exception.</p>
-
-      <p>Distillée 5 fois et filtrée 2 fois, HOVERLA respecte un savoir-faire ancestral transmis de génération en génération. L'ajout délicat de miel ukrainien apporte une douceur unique et une rondeur incomparable.</p>
-    </div>
-  </section>
-
-  <!-- Notes de Dégustation -->
-  <section class="degustation">
-    <h2 class="fade-up">Notes de Dégustation</h2>
-    <div class="degustation-grid">
-      <div class="note-card fade-up">
-        <h3>Nez</h3>
-        <p>Arômes délicats de fleurs blanches et de céréales, avec une subtile note de miel.</p>
-      </div>
-      <div class="note-card fade-up">
-        <h3>Bouche</h3>
-        <p>Attaque douce et veloutée, où le miel ukrainien révèle toute sa rondeur. Texture soyeuse et équilibrée.</p>
-      </div>
-      <div class="note-card fade-up">
-        <h3>Finale</h3>
-        <p>Persistance fraîche et légèrement épicée, signature des grandes vodkas artisanales.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gamme Section -->
-  <section class="gamme">
-    <h2 class="fade-up">Sept Saveurs d'Exception</h2>
-    <div class="saveurs-grid">
-      {saveurs.map(saveur => (
-        <div class="saveur-card fade-up">
-          <div class="saveur-diamond" style={`background: ${saveur.color};`}></div>
-          <h3>{saveur.name}</h3>
-          <p>{saveur.description}</p>
+  <!-- Section Histoire (2 colonnes) -->
+  <section class="histoire section-padding">
+    <div class="container">
+      <div class="histoire__grid">
+        <div class="histoire__text">
+          <p class="histoire__quote fade-up">
+            « Au sommet des Carpates, où le temps s'arrête, naît une vodka d'exception. »
+          </p>
+          <div class="divider fade-up"></div>
+          <p class="fade-up">
+            HOVERLA tire son nom du plus haut sommet d'Ukraine. Chaque bouteille incarne la pureté des glaciers et le savoir-faire ancestral des distillateurs ukrainiens.
+          </p>
+          <p class="fade-up">
+            Distillée cinq fois à partir de blé d'hiver sélectionné, filtrée au charbon de bouleau, HOVERLA révèle une palette aromatique unique grâce à ses sept infusions naturelles.
+          </p>
         </div>
-      ))}
+        <div class="histoire__image">
+          <img src={`${base}images/hoverla-mignonnettes-gamme.jpg`} alt="Mignonnettes HOVERLA" />
+        </div>
+      </div>
     </div>
-    <div class="gamme-image fade-up">
-      <img src={base + '/images/hoverla-mignonnettes-gamme.jpg'} alt="Gamme HOVERLA" />
+  </section>
+
+  <!-- Section Dégustation (3 colonnes) -->
+  <section class="degustation section-padding">
+    <div class="container">
+      <h2 class="degustation__title fade-up">L'Art de la Dégustation</h2>
+      <div class="degustation__grid">
+        <div class="degustation__col fade-up">
+          <div class="degustation__divider"></div>
+          <h3>Nez</h3>
+          <p>Arômes délicats et purs, chaque saveur révèle sa personnalité dès les premières notes olfactives.</p>
+        </div>
+        <div class="degustation__col fade-up">
+          <div class="degustation__divider"></div>
+          <h3>Bouche</h3>
+          <p>Texture soyeuse et équilibrée. La quintuple distillation garantit une rondeur exceptionnelle.</p>
+        </div>
+        <div class="degustation__col fade-up">
+          <div class="degustation__divider"></div>
+          <h3>Finale</h3>
+          <p>Persistance élégante, sans amertume. Les arômes naturels s'expriment en longueur.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section Gamme (identique accueil) -->
+  <section class="gamme section-padding">
+    <div class="container">
+      <h2 class="gamme__title fade-up">La Collection</h2>
+      <div class="gamme__grid">
+        <!-- Pure -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#C8A84E" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Pure</h3>
+          <p class="gamme__desc">Caractère authentique</p>
+        </div>
+
+        <!-- Apple -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#7BC67E" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Apple</h3>
+          <p class="gamme__desc">Fraîcheur fruitée</p>
+        </div>
+
+        <!-- Pineapple -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#F5C842" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Pineapple</h3>
+          <p class="gamme__desc">Exotisme tropical</p>
+        </div>
+
+        <!-- Acai Berry -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#7B4FA6" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Acai Berry</h3>
+          <p class="gamme__desc">Intensité sauvage</p>
+        </div>
+
+        <!-- Peach -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#F4A460" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Peach</h3>
+          <p class="gamme__desc">Douceur veloutée</p>
+        </div>
+
+        <!-- Coconut -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#8B6347" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Coconut</h3>
+          <p class="gamme__desc">Onctuosité crémeuse</p>
+        </div>
+
+        <!-- Red Berry -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#C0392B" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Red Berry</h3>
+          <p class="gamme__desc">Élégance acidulée</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="cta section-padding">
+    <div class="container container--narrow">
+      <div class="cta__content fade-up">
+        <span class="label">DISPONIBLE</span>
+        <h2>Où trouver HOVERLA ?</h2>
+        <p>Nos vodkas sont disponibles en boutiques spécialisées et en ligne.</p>
+        <a href={`${base}contact`} class="btn btn-gold">Nous contacter</a>
+      </div>
     </div>
   </section>
 
@@ -83,168 +159,218 @@ const saveurs = [
 </Layout>
 
 <style>
-  .hero-vodka {
+  /* ========================================
+     HERO FULL-BLEED
+     ======================================== */
+  .hero {
     position: relative;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('/jp-project-site/images/hoverla-gamme-bar.jpg');
-    background-size: cover;
-    background-position: center;
+    height: 90vh;
+    margin-top: 72px;
+    overflow: hidden;
   }
 
-  .hero-overlay {
+  .hero__image {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero__overlay {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(8, 8, 8, 0.5), rgba(8, 8, 8, 0.8));
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(8, 8, 8, 0.4);
     text-align: center;
   }
 
-  .hero-subtitle {
-    font-family: var(--font-display);
-    font-size: clamp(18px, 2.5vw, 28px);
-    font-style: italic;
-    color: var(--white-2);
+  .hero__title {
+    font-size: clamp(64px, 10vw, 120px);
+    color: var(--white);
+    margin-bottom: 16px;
   }
 
+  .hero__subtitle {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ========================================
+     SECTION HISTOIRE
+     ======================================== */
   .histoire {
     background: var(--bg);
   }
 
-  .histoire-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .legend-box {
-    background: var(--bg-2);
-    border-left: 3px solid var(--gold);
-    padding: 30px;
-    margin: 40px 0;
-  }
-
-  .legend-text {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-style: italic;
-    color: var(--gold-light);
-    line-height: 1.6;
-  }
-
-  .histoire-content p {
-    margin-bottom: 20px;
-  }
-
-  .degustation {
-    background: var(--bg-2);
-  }
-
-  .degustation h2 {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .degustation-grid {
+  .histoire__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
   }
 
-  .note-card {
+  .histoire__quote {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 40px);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--white);
+    margin-bottom: 32px;
+  }
+
+  .histoire__text p {
+    margin-bottom: 24px;
+  }
+
+  .histoire__image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* ========================================
+     SECTION DÉGUSTATION
+     ======================================== */
+  .degustation {
+    background: var(--bg-warm);
+  }
+
+  .degustation__title {
     text-align: center;
-    padding: 30px;
-    border: 1px solid var(--border);
-    background: var(--bg);
+    margin-bottom: 80px;
   }
 
-  .note-card h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
+  .degustation__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
   }
 
-  .note-card p {
-    color: var(--white-2);
-    line-height: 1.6;
+  .degustation__col {
+    text-align: center;
   }
 
+  .degustation__divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 24px;
+  }
+
+  .degustation__col h3 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .degustation__col p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  /* ========================================
+     SECTION GAMME
+     ======================================== */
   .gamme {
     background: var(--bg);
   }
 
-  .gamme h2 {
+  .gamme__title {
     text-align: center;
     margin-bottom: 60px;
   }
 
-  .saveurs-grid {
+  .gamme__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
-    margin-bottom: 60px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
   }
 
-  .saveur-card {
-    text-align: center;
-    padding: 30px 20px;
-    background: var(--bg-2);
-    border: 1px solid var(--border);
-    transition: border-color 0.3s ease;
+  .gamme__card {
+    background: #111;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
   }
 
-  .saveur-card:hover {
+  .gamme__card:hover {
+    background: #1a1a1a;
     border-color: var(--gold);
   }
 
-  .saveur-diamond {
-    width: 60px;
-    height: 60px;
-    margin: 0 auto 20px;
-    transform: rotate(45deg);
-    border: 2px solid var(--border);
+  .gamme__name {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--white);
+    margin: 0;
   }
 
-  .saveur-card h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
+  .gamme__desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--white-dim);
+    margin: 0;
   }
 
-  .saveur-card p {
-    font-size: 14px;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  .gamme-image {
+  /* ========================================
+     SECTION CTA
+     ======================================== */
+  .cta {
+    background: var(--bg);
     text-align: center;
   }
 
-  .gamme-image img {
-    max-width: 100%;
-    border: 1px solid var(--border);
+  .cta__content h2 {
+    margin: 16px 0 24px;
+  }
+
+  .cta__content p {
+    margin-bottom: 32px;
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 1024px) {
+    .histoire__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .degustation__grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
   }
 
   @media (max-width: 768px) {
-    .degustation-grid {
-      grid-template-columns: 1fr;
+    .hero {
+      margin-top: 64px;
+      height: 70vh;
     }
 
-    .saveurs-grid {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 20px;
+    .gamme__grid {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     }
 
-    .saveur-diamond {
-      width: 50px;
-      height: 50px;
+    .gamme__card {
+      height: 280px;
     }
   }
 </style>

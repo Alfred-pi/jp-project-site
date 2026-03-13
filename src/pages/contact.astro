@@ -2,21 +2,60 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="Contact – CSCO" description="Contactez CSCO pour toute demande concernant nos produits d'exception.">
-  <Nav />
+<Layout title="Contact — CSCO" description="Contactez-nous pour toute demande d'information ou commande de coffret d'exception.">
+  <Nav current={`${base}contact`} />
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__content fade-up">
+        <span class="label">CONTACT</span>
+        <h1>Nous Contacter</h1>
+        <p class="hero__subtitle">Pour toute demande d'information, commande de coffret ou question sur nos produits, nous sommes à votre écoute.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- Contact Section -->
-  <section class="contact-page">
-    <div class="contact-container">
-      <div class="contact-intro fade-up">
-        <h1>Contactez-nous</h1>
-        <p>Pour toute demande d'information, commande de coffret ou question sur nos produits, nous sommes à votre écoute.</p>
-      </div>
+  <section class="contact section-padding">
+    <div class="container">
+      <div class="contact__grid">
+        <!-- Informations -->
+        <div class="contact__info">
+          <div class="contact__block fade-up">
+            <h3>Email</h3>
+            <p><a href="mailto:contact@csco-spirits.com">contact@csco-spirits.com</a></p>
+          </div>
 
-      <div class="contact-grid">
-        <div class="contact-form fade-up">
+          <div class="contact__block fade-up">
+            <h3>Téléphone</h3>
+            <p><a href="tel:+33123456789">+33 1 23 45 67 89</a></p>
+          </div>
+
+          <div class="contact__block fade-up">
+            <h3>Adresse</h3>
+            <p>
+              CSCO Spirits<br>
+              123 Avenue des Champs-Élysées<br>
+              75008 Paris, France
+            </p>
+          </div>
+
+          <div class="contact__block fade-up">
+            <h3>Réseaux Sociaux</h3>
+            <div class="contact__social">
+              <a href="https://instagram.com/hoverla.vodka" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://facebook.com/hoverlavodka" target="_blank" rel="noopener">Facebook</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="contact__form fade-up">
           <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact" />
             <p class="hidden">
@@ -41,11 +80,11 @@ import Footer from '../components/Footer.astro';
             <div class="form-group">
               <label for="subject">Sujet *</label>
               <select id="subject" name="subject" required>
-                <option value="">Sélectionnez un sujet</option>
-                <option value="commande-coffret">Commande de coffret</option>
+                <option value="">Choisissez un sujet</option>
+                <option value="coffret">Commande de coffret</option>
                 <option value="info-vodka">Information Vodka HOVERLA</option>
                 <option value="info-cigares">Information Cigares Mont Noir</option>
-                <option value="partenariat">Partenariat / Revendeur</option>
+                <option value="personnalisation">Coffret personnalisé</option>
                 <option value="autre">Autre demande</option>
               </select>
             </div>
@@ -55,45 +94,8 @@ import Footer from '../components/Footer.astro';
               <textarea id="message" name="message" rows="6" required></textarea>
             </div>
 
-            <button type="submit" class="btn">Envoyer</button>
+            <button type="submit" class="btn btn-gold">Envoyer</button>
           </form>
-        </div>
-
-        <div class="contact-info fade-up">
-          <div class="info-block">
-            <h3>HOVERLA Vodka</h3>
-            <p><strong>Email :</strong><br/>
-            <a href="mailto:contact@hoverlavodka.com">contact@hoverlavodka.com</a></p>
-            <p><strong>Site officiel :</strong><br/>
-            <a href="https://www.hoverlavodka.com" target="_blank" rel="noopener">www.hoverlavodka.com</a></p>
-          </div>
-
-          <div class="info-block">
-            <h3>Suivez-nous</h3>
-            <div class="social-links">
-              <a href="https://www.instagram.com/hoverla.vodka" target="_blank" rel="noopener" class="social-link">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-                <span>@hoverla.vodka</span>
-              </a>
-              <a href="https://www.facebook.com/hoverlavodka" target="_blank" rel="noopener" class="social-link">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                </svg>
-                <span>@hoverlavodka</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="info-block">
-            <h3>Horaires</h3>
-            <p>Du lundi au vendredi<br/>
-            9h00 - 18h00</p>
-            <p class="note">Réponse sous 24-48h</p>
-          </div>
         </div>
       </div>
     </div>
@@ -103,67 +105,120 @@ import Footer from '../components/Footer.astro';
 </Layout>
 
 <style>
-  .contact-page {
-    background: var(--bg);
-    padding: 80px 20px 120px;
+  .hidden {
+    display: none;
   }
 
-  .contact-container {
-    max-width: 1200px;
+  /* ========================================
+     HERO
+     ======================================== */
+  .hero {
+    background: var(--bg);
+    padding: 200px 0 120px;
+    margin-top: 72px;
+    text-align: center;
+  }
+
+  .hero__content {
+    max-width: 800px;
     margin: 0 auto;
   }
 
-  .contact-intro {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 80px;
+  .hero h1 {
+    margin: 16px 0 24px;
   }
 
-  .contact-intro h1 {
-    margin-bottom: 20px;
+  .hero__subtitle {
+    font-size: 16px;
+    color: var(--white-dim);
   }
 
-  .contact-intro p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: var(--white-2);
+  /* ========================================
+     SECTION CONTACT
+     ======================================== */
+  .contact {
+    background: var(--bg);
   }
 
-  .contact-grid {
+  .contact__grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
   }
 
-  .contact-form {
-    background: var(--bg-2);
-    padding: 40px;
+  /* Informations */
+  .contact__info {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .contact__block h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .contact__block p,
+  .contact__block a {
+    font-size: 15px;
+    color: var(--white-dim);
+    line-height: 1.8;
+  }
+
+  .contact__block a:hover {
+    color: var(--gold);
+  }
+
+  .contact__social {
+    display: flex;
+    gap: 24px;
+  }
+
+  .contact__social a {
+    font-size: 14px;
+    color: var(--white-dim);
+    transition: color 0.3s ease;
+  }
+
+  .contact__social a:hover {
+    color: var(--gold);
+  }
+
+  /* Formulaire */
+  .contact__form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 48px;
     border: 1px solid var(--border);
   }
 
   .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 24px;
   }
 
   .form-group label {
     display: block;
-    font-size: 14px;
+    font-family: var(--font-body);
+    font-size: 11px;
     font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 8px;
-    letter-spacing: 0.05em;
   }
 
   .form-group input,
   .form-group select,
   .form-group textarea {
     width: 100%;
-    padding: 12px 15px;
-    background: var(--bg);
+    background: rgba(8, 8, 8, 0.6);
     border: 1px solid var(--border);
     color: var(--white);
     font-family: var(--font-body);
-    font-size: 15px;
+    font-size: 14px;
+    padding: 14px 16px;
     transition: border-color 0.3s ease;
   }
 
@@ -176,84 +231,36 @@ import Footer from '../components/Footer.astro';
 
   .form-group textarea {
     resize: vertical;
+    min-height: 120px;
   }
 
-  .hidden {
-    display: none;
-  }
-
-  .contact-form button[type="submit"] {
+  .contact__form button {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 16px;
   }
 
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .info-block h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-
-  .info-block p {
-    color: var(--white-2);
-    line-height: 1.8;
-    margin-bottom: 15px;
-  }
-
-  .info-block a {
-    color: var(--white-2);
-    transition: color 0.3s ease;
-  }
-
-  .info-block a:hover {
-    color: var(--gold);
-  }
-
-  .info-block strong {
-    color: var(--gold);
-    font-weight: 500;
-  }
-
-  .note {
-    font-size: 13px;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-
-  .social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    color: var(--white-2);
-    transition: color 0.3s ease;
-  }
-
-  .social-link:hover {
-    color: var(--gold);
-  }
-
-  .social-link svg {
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 968px) {
-    .contact-grid {
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 1024px) {
+    .contact__grid {
       grid-template-columns: 1fr;
-      gap: 50px;
+      gap: 60px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      padding: 160px 0 80px;
+      margin-top: 64px;
     }
 
-    .contact-form {
-      padding: 30px 20px;
+    .contact__form {
+      padding: 32px 24px;
+    }
+
+    .contact__info {
+      gap: 32px;
     }
   }
 </style>

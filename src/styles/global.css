@@ -1,13 +1,16 @@
+/* ========================================
+   CSCO - Luxury Design System
+   Niveau: Belvedere / Grey Goose / Hennessy
+   ======================================== */
+
 :root {
   --bg: #080808;
-  --bg-2: #111111;
-  --bg-3: #1a1a1a;
+  --bg-warm: #0D0A06;
+  --bg-cream: #F5F0E8;
   --gold: #C8A84E;
   --gold-light: #E8C96A;
-  --gold-dark: #9A7A2E;
   --white: #F5F2EC;
-  --white-2: #D4CFC4;
-  --text-muted: #888;
+  --white-dim: rgba(245, 242, 236, 0.6);
   --border: rgba(200, 168, 78, 0.2);
   --font-display: 'Cormorant Garamond', serif;
   --font-body: 'Montserrat', sans-serif;
@@ -25,88 +28,169 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--white-2);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--white);
   background: var(--bg);
-  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  color: var(--gold);
-  letter-spacing: 0.1em;
-  font-weight: 400;
-}
+/* ========================================
+   TYPOGRAPHY - LUXURY SCALE
+   ======================================== */
 
 h1 {
-  font-size: clamp(48px, 8vw, 120px);
-  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(72px, 12vw, 160px);
+  line-height: 0.9;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: var(--white);
 }
 
 h2 {
-  font-size: clamp(32px, 5vw, 64px);
-  margin-bottom: 1.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(48px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--white);
 }
 
 h3 {
-  font-size: clamp(24px, 3vw, 40px);
-  margin-bottom: 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 300;
+  color: var(--white);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--white-dim);
 }
 
 a {
-  color: var(--gold);
+  color: inherit;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--gold-light);
+  color: var(--gold);
 }
 
-section {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-body);
 }
 
-@media (min-width: 768px) {
-  section {
-    padding: 120px 40px;
-  }
+.divider {
+  width: 60px;
+  height: 1px;
+  background: var(--gold);
+  margin: 24px 0;
 }
+
+.divider--full {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* ========================================
+   BUTTONS - LUXURY STYLE
+   ======================================== */
 
 .btn {
   display: inline-block;
-  padding: 14px 40px;
-  border: 1px solid var(--gold);
-  background: transparent;
-  color: var(--gold);
   font-family: var(--font-body);
-  font-weight: 400;
-  letter-spacing: 0.05em;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-size: 14px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
-  transition: all 0.3s ease;
+  border: none;
+  text-align: center;
 }
 
-.btn:hover {
+.btn-ghost {
+  border: 1px solid currentColor;
+  padding: 14px 48px;
+  background: transparent;
+  color: var(--white);
+}
+
+.btn-ghost:hover {
+  background: var(--gold);
+  color: var(--bg);
+  border-color: var(--gold);
+}
+
+.btn-gold {
+  border: 1px solid var(--gold);
+  padding: 16px 60px;
   background: var(--gold);
   color: var(--bg);
 }
 
-/* fade-up — JS ajoute .visible, fallback visible sans JS */
-.fade-up {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+.btn-gold:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
 }
 
-/* JS activé : reset à l'état initial via .js-loaded */
-.js-loaded .fade-up {
+/* ========================================
+   SCROLL INDICATOR (Hero)
+   ======================================== */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--white-dim);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+/* ========================================
+   FADE-UP ANIMATIONS
+   ======================================== */
+
+.fade-up {
   opacity: 0;
   transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .js-loaded .fade-up.visible {
@@ -114,8 +198,105 @@ section {
   transform: translateY(0);
 }
 
+/* ========================================
+   LAYOUT CONTAINERS
+   ======================================== */
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.container--narrow {
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+/* ========================================
+   SECTIONS
+   ======================================== */
+
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-padding {
+  padding: 160px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+
+/* ========================================
+   GRID SYSTEM
+   ======================================== */
+
+.grid {
+  display: grid;
+  gap: 24px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-7 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media (max-width: 1024px) {
+  .grid-2,
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   RESPONSIVE IMAGES
+   ======================================== */
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========================================
+   MOBILE OPTIMIZATIONS
+   ======================================== */
+
+@media (max-width: 768px) {
+  h1 {
+    letter-spacing: -0.01em;
+  }
+  
+  .label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+  }
+  
+  .btn {
+    font-size: 10px;
+    padding: 12px 32px;
+  }
 }

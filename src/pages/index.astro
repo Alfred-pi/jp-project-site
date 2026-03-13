@@ -1,69 +1,158 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import AgeGate from '../components/AgeGate.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import ProductCard from '../components/ProductCard.astro';
 
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="CSCO – Excellence & Élégance" description="CSCO by Jean-Philippe Guidicili – Vodka artisanale HOVERLA, Cigares Mont Noir, et coffrets d'exception">
-  <Nav />
+<Layout title="CSCO — Excellence & Élégance" description="Vodka artisanale HOVERLA et cigares Mont Noir. L'art de l'excellence.">
+  <AgeGate />
+  <Nav current={base} />
 
-  <!-- Hero Section -->
+  <!-- Hero Split Screen -->
   <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content fade-up">
-      <h1>CSCO</h1>
-      <p class="hero-subtitle">Excellence & Élégance</p>
-      <a href={base + '/vodka'} class="btn">Découvrir</a>
+    <div class="hero__content">
+      <div class="hero__text">
+        <h1 class="fade-up">CSCO</h1>
+        <p class="hero__subtitle fade-up">Excellence & Élégance</p>
+        <div class="divider fade-up"></div>
+        <a href="#vodka" class="btn btn-ghost fade-up">Découvrir</a>
+      </div>
+      <div class="hero__image">
+        <img src={`${base}images/csco-coffret-promo.jpg`} alt="CSCO - Coffret Premium" class="img-cover" />
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
     </div>
   </section>
 
-  <!-- Univers Section -->
-  <section class="univers">
-    <div class="univers-grid">
-      <div class="univers-text fade-up">
-        <h2>La Maison CSCO</h2>
-        <p>CSCO incarne l'excellence et le raffinement à travers une sélection exigeante de produits premium. De la vodka artisanale ukrainienne HOVERLA aux cigares d'exception Mont Noir, chaque création reflète un savoir-faire ancestral et une quête de perfection.</p>
-        <p>Notre philosophie : offrir des expériences sensorielles uniques, où tradition et élégance se rencontrent pour créer des moments inoubliables.</p>
+  <!-- Section: La Maison (Full Bleed Texte) -->
+  <section class="maison section-padding">
+    <div class="container container--narrow">
+      <p class="maison__quote fade-up">« Né au cœur des Carpates, forgé dans l'excellence. »</p>
+      <div class="divider fade-up"></div>
+      <p class="fade-up">CSCO incarne l'alliance parfaite entre tradition et raffinement. Chaque produit est le fruit d'un savoir-faire exceptionnel, pensé pour les connaisseurs qui recherchent l'excellence absolue.</p>
+    </div>
+  </section>
+
+  <!-- Section: Vodka HOVERLA (Image Gauche) -->
+  <div class="divider--full"></div>
+  <section id="vodka" class="vodka">
+    <div class="vodka__grid">
+      <div class="vodka__image">
+        <img src={`${base}images/hoverla-gamme-bar.jpg`} alt="Gamme HOVERLA" class="img-cover" />
       </div>
-      <div class="univers-image fade-up">
-        <img src={base + '/images/csco-coffret-promo.jpg'} alt="Coffret CSCO" />
+      <div class="vodka__content">
+        <span class="label fade-up">VODKA ARTISANALE</span>
+        <h2 class="fade-up">HOVERLA</h2>
+        <p class="fade-up">
+          Une vodka ukrainienne d'exception, distillée selon des méthodes ancestrales. Sept saveurs uniques pour une palette aromatique incomparable.
+        </p>
+        <a href={`${base}vodka`} class="btn btn-ghost fade-up">Découvrir la gamme</a>
       </div>
     </div>
   </section>
 
-  <!-- Produits Section -->
-  <section class="produits">
-    <h2 class="fade-up">Nos Produits</h2>
-    <div class="produits-grid">
-      <ProductCard 
-        title="Vodka HOVERLA"
-        description="Vodka artisanale ukrainienne d'exception, 5 fois distillée et 2 fois filtrée. Sept saveurs uniques inspirées des Carpates."
-        image="/images/hoverla-gamme-bar.jpg"
-        link="/vodka"
-      />
-      <ProductCard 
-        title="Cigares Mont Noir"
-        description="Une collaboration exclusive entre CSCO et Vegas Corporan. L'art du cigare rencontre l'élégance contemporaine."
-        image="/images/hoverla-cigare-gros-plan.jpg"
-        link="/cigares"
-      />
+  <!-- Section: Gamme 7 saveurs (Cards Minimalistes) -->
+  <section class="gamme section-padding">
+    <div class="container">
+      <div class="gamme__grid">
+        <!-- Pure -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#C8A84E" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Pure</h3>
+          <p class="gamme__desc">Caractère authentique</p>
+        </div>
+
+        <!-- Apple -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#7BC67E" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Apple</h3>
+          <p class="gamme__desc">Fraîcheur fruitée</p>
+        </div>
+
+        <!-- Pineapple -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#F5C842" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Pineapple</h3>
+          <p class="gamme__desc">Exotisme tropical</p>
+        </div>
+
+        <!-- Acai Berry -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#7B4FA6" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Acai Berry</h3>
+          <p class="gamme__desc">Intensité sauvage</p>
+        </div>
+
+        <!-- Peach -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#F4A460" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Peach</h3>
+          <p class="gamme__desc">Douceur veloutée</p>
+        </div>
+
+        <!-- Coconut -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#8B6347" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Coconut</h3>
+          <p class="gamme__desc">Onctuosité crémeuse</p>
+        </div>
+
+        <!-- Red Berry -->
+        <div class="gamme__card fade-up">
+          <svg width="80" height="80" viewBox="0 0 80 80">
+            <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="#C0392B" stroke-width="1.5"/>
+          </svg>
+          <h3 class="gamme__name">Red Berry</h3>
+          <p class="gamme__desc">Élégance acidulée</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Coffrets Section -->
-  <section class="coffrets-promo">
-    <div class="coffrets-grid">
-      <div class="coffrets-image fade-up">
-        <img src={base + '/images/csco-coffrets-cigare.jpg'} alt="Coffrets CSCO" />
-      </div>
-      <div class="coffrets-text fade-up">
-        <h2>Coffrets d'Exception</h2>
-        <p>Découvrez nos coffrets prestige, alliant vodka HOVERLA et cigares Mont Noir dans des écrins soigneusement composés. Parfaits pour offrir ou pour célébrer les grandes occasions.</p>
-        <a href={base + '/coffrets'} class="btn">Voir les coffrets</a>
-      </div>
+  <!-- Section: Cigares (Fond Foncé Texturé) -->
+  <section class="cigares">
+    <div class="cigares__bg">
+      <img src={`${base}images/hoverla-cigare-gros-plan.jpg`} alt="Cigare Mont Noir" class="img-cover" />
+    </div>
+    <div class="cigares__content">
+      <span class="label fade-up">EXCELLENCE CUBAINE</span>
+      <h2 class="fade-up">MONT NOIR</h2>
+      <p class="cigares__subtitle fade-up">Exclusivité CSCO × Vegas Corporan</p>
+      <a href={`${base}cigares`} class="btn btn-ghost fade-up">En savoir plus</a>
+    </div>
+  </section>
+
+  <!-- Section: Coffrets (Asymétrique, fond crème) -->
+  <section class="coffrets">
+    <div class="coffrets__image">
+      <img src={`${base}images/csco-coffrets-cigare.jpg`} alt="Coffrets CSCO" class="img-cover" />
+    </div>
+    <div class="coffrets__content">
+      <span class="label fade-up">PRESTIGE</span>
+      <h2 class="fade-up">Coffrets d'Exception</h2>
+      <p class="fade-up">
+        Des écrins soigneusement composés pour célébrer les moments d'exception. L'union parfaite entre nos vodkas artisanales et nos cigares premium.
+      </p>
+      <a href={`${base}coffrets`} class="btn btn-ghost fade-up">Découvrir</a>
     </div>
   </section>
 
@@ -71,114 +160,297 @@ const base = import.meta.env.BASE_URL;
 </Layout>
 
 <style>
+  /* ========================================
+     HERO - SPLIT SCREEN
+     ======================================== */
   .hero {
+    min-height: 100vh;
     position: relative;
-    height: 100vh;
+    margin-top: 72px; /* Nav offset */
+  }
+
+  .hero__content {
+    display: grid;
+    grid-template-columns: 45% 55%;
+    min-height: 100vh;
+  }
+
+  .hero__text {
+    background: var(--bg);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    background-image: url('/jp-project-site/images/hoverla-gamme-bar.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    padding: 80px 60px;
   }
 
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(8, 8, 8, 0.5), rgba(8, 8, 8, 0.8));
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: var(--white);
-  }
-
-  .hero-subtitle {
+  .hero__subtitle {
     font-family: var(--font-display);
-    font-size: clamp(20px, 3vw, 32px);
+    font-size: clamp(24px, 3vw, 36px);
     font-style: italic;
-    color: var(--white-2);
+    font-weight: 300;
+    color: var(--gold);
+    margin-top: 16px;
+    margin-bottom: 32px;
+  }
+
+  .hero__image {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ========================================
+     SECTION: LA MAISON
+     ======================================== */
+  .maison {
+    background: var(--bg);
+    text-align: center;
+  }
+
+  .maison__quote {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 48px);
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.4;
+    color: var(--white);
     margin-bottom: 40px;
   }
 
-  .univers-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-  }
-
-  .univers-text p {
-    margin-bottom: 20px;
-  }
-
-  .univers-image img {
-    width: 100%;
-    border: 1px solid var(--border);
-  }
-
-  .produits {
-    background: var(--bg-2);
-  }
-
-  .produits h2 {
-    text-align: center;
-    margin-bottom: 60px;
-  }
-
-  .produits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-  }
-
-  .coffrets-promo {
+  /* ========================================
+     SECTION: VODKA (Image Gauche)
+     ======================================== */
+  .vodka {
     background: var(--bg);
   }
 
-  .coffrets-grid {
+  .vodka__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+  }
+
+  .vodka__image {
+    height: 700px;
+    overflow: hidden;
+  }
+
+  .vodka__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px;
+  }
+
+  .vodka__content h2 {
+    margin: 16px 0 24px;
+  }
+
+  .vodka__content p {
+    margin-bottom: 32px;
+  }
+
+  /* ========================================
+     SECTION: GAMME (Cards)
+     ======================================== */
+  .gamme {
+    background: var(--bg);
+  }
+
+  .gamme__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+  }
+
+  .gamme__card {
+    background: #111;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 24px;
+    transition: all 0.4s ease;
+    border: 1px solid transparent;
   }
 
-  .coffrets-text p {
-    margin-bottom: 30px;
+  .gamme__card:hover {
+    background: #1a1a1a;
+    border-color: var(--gold);
   }
 
-  .coffrets-image img {
+  .gamme__name {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--white);
+    margin: 0;
+  }
+
+  .gamme__desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--white-dim);
+    margin: 0;
+  }
+
+  /* ========================================
+     SECTION: CIGARES (Dark Atmospheric)
+     ======================================== */
+  .cigares {
+    position: relative;
+    background: var(--bg-warm);
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .cigares__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    border: 1px solid var(--border);
+    height: 40vh;
+    opacity: 0.3;
+  }
+
+  .cigares__content {
+    position: relative;
+    z-index: 10;
+    max-width: 600px;
+    padding: 120px 40px;
+  }
+
+  .cigares__content h2 {
+    margin: 16px 0;
+  }
+
+  .cigares__subtitle {
+    font-size: 18px;
+    color: var(--white-dim);
+    margin-bottom: 32px;
+  }
+
+  /* ========================================
+     SECTION: COFFRETS (Asymétrique)
+     ======================================== */
+  .coffrets {
+    position: relative;
+    background: var(--bg-cream);
+    min-height: 600px;
+    padding-left: 60%;
+  }
+
+  .coffrets__image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 45%;
+  }
+
+  .coffrets__content {
+    position: relative;
+    z-index: 10;
+    padding: 100px 60px;
+    color: var(--bg);
+  }
+
+  .coffrets__content .label {
+    color: var(--bg-warm);
+  }
+
+  .coffrets__content h2 {
+    color: var(--bg);
+    margin: 16px 0 24px;
+  }
+
+  .coffrets__content p {
+    color: rgba(13, 10, 6, 0.7);
+    margin-bottom: 32px;
+  }
+
+  .coffrets__content .btn {
+    color: var(--bg);
+    border-color: var(--bg);
+  }
+
+  .coffrets__content .btn:hover {
+    background: var(--bg);
+    color: var(--bg-cream);
+  }
+
+  /* ========================================
+     RESPONSIVE
+     ======================================== */
+  @media (max-width: 1024px) {
+    .hero__content {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__image {
+      height: 50vh;
+      order: -1;
+    }
+
+    .vodka__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .vodka__image {
+      height: 400px;
+    }
+
+    .coffrets {
+      padding-left: 0;
+    }
+
+    .coffrets__image {
+      position: relative;
+      width: 100%;
+      height: 400px;
+    }
+
+    .coffrets__content {
+      padding: 60px 40px;
+    }
   }
 
   @media (max-width: 768px) {
-    .univers-grid,
-    .coffrets-grid {
-      grid-template-columns: 1fr;
-      gap: 40px;
+    .hero {
+      margin-top: 64px;
     }
 
-    .coffrets-grid {
-      direction: ltr;
+    .hero__text {
+      padding: 60px 24px;
     }
 
-    .coffrets-image {
-      order: 1;
+    .vodka__content {
+      padding: 60px 24px;
     }
 
-    .coffrets-text {
-      order: 2;
+    .gamme__grid {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     }
 
-    .produits-grid {
-      grid-template-columns: 1fr;
+    .gamme__card {
+      height: 280px;
+    }
+
+    .cigares__content {
+      padding: 80px 24px;
+    }
+
+    .coffrets__content {
+      padding: 60px 24px;
     }
   }
 </style>
