@@ -96,13 +96,20 @@ section {
   color: var(--bg);
 }
 
+/* fade-up — JS ajoute .visible, fallback visible sans JS */
 .fade-up {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.fade-up.visible {
+/* JS activé : reset à l'état initial via .js-loaded */
+.js-loaded .fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.js-loaded .fade-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
