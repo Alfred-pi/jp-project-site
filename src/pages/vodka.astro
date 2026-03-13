@@ -7,12 +7,12 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="HOVERLA — Vodka Artisanale Ukrainienne" description="Vodka ukrainienne d'exception. Sept saveurs uniques, distillation artisanale.">
-  <Nav current={`${base}vodka`} />
+  <Nav current={`${base}/vodka`} />
 
   <!-- Hero Full-Bleed -->
   <section class="hero">
     <div class="hero__image">
-      <img src={`${base}images/hoverla-gamme-bar.jpg`} alt="Gamme HOVERLA" class="img-cover" />
+      <img src={`${base}/images/hoverla-gamme-bar.jpg`} alt="Gamme HOVERLA" class="img-cover" />
     </div>
     <div class="hero__overlay">
       <h1 class="hero__title fade-up">HOVERLA</h1>
@@ -42,7 +42,7 @@ const base = import.meta.env.BASE_URL;
           </p>
         </div>
         <div class="histoire__image">
-          <img src={`${base}images/hoverla-mignonnettes-gamme.jpg`} alt="Mignonnettes HOVERLA" />
+          <img src={`${base}/images/hoverla-mignonnettes-gamme.jpg`} alt="Mignonnettes HOVERLA" />
         </div>
       </div>
     </div>
@@ -150,7 +150,7 @@ const base = import.meta.env.BASE_URL;
         <span class="label">DISPONIBLE</span>
         <h2>Où trouver HOVERLA ?</h2>
         <p>Nos vodkas sont disponibles en boutiques spécialisées et en ligne.</p>
-        <a href={`${base}contact`} class="btn btn-gold">Nous contacter</a>
+        <a href={`${base}/contact`} class="btn btn-gold">Nous contacter</a>
       </div>
     </div>
   </section>

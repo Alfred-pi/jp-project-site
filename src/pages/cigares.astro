@@ -7,12 +7,12 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="MONT NOIR — Cigares d'Exception" description="Cigares premium, exclusivité CSCO × Vegas Corporan. Excellence cubaine.">
-  <Nav current={`${base}cigares`} />
+  <Nav current={`${base}/cigares`} />
 
   <!-- Hero Full-Bleed 100vh -->
   <section class="hero">
     <div class="hero__image">
-      <img src={`${base}images/hoverla-cigare-gros-plan.jpg`} alt="Cigare Mont Noir" class="img-cover" />
+      <img src={`${base}/images/hoverla-cigare-gros-plan.jpg`} alt="Cigare Mont Noir" class="img-cover" />
     </div>
     <div class="hero__overlay">
       <h1 class="hero__title fade-up">MONT NOIR</h1>
@@ -65,7 +65,7 @@ const base = import.meta.env.BASE_URL;
       </div>
       
       <div class="produit__image">
-        <img src={`${base}images/csco-coffret-ouvert.jpg`} alt="Coffret Mont Noir" class="img-cover" />
+        <img src={`${base}/images/csco-coffret-ouvert.jpg`} alt="Coffret Mont Noir" class="img-cover" />
       </div>
     </div>
   </section>
@@ -97,7 +97,7 @@ const base = import.meta.env.BASE_URL;
         <span class="label">DÉCOUVRIR</span>
         <h2>Commandez Vos Cigares</h2>
         <p>Disponibles en édition limitée. Contactez-nous pour une expérience personnalisée.</p>
-        <a href={`${base}contact`} class="btn btn-gold">Nous contacter</a>
+        <a href={`${base}/contact`} class="btn btn-gold">Nous contacter</a>
       </div>
     </div>
   </section>
