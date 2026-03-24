@@ -4,579 +4,339 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="CSCO — Excellence & Élégance">
-  
-  <!-- ========================================
-       SECTION 1 — HERO ÉDITORIAL
-       ======================================== -->
+  <!-- HERO FULLSCREEN -->
   <section class="hero">
-    <div class="hero__text">
+    <div class="hero__bg"></div>
+    <div class="hero__content">
       <h1 class="hero__title">
-        EXCELLENCE<br>& ÉLÉGANCE
+        Excellence<br/>
+        & Élégance
       </h1>
-      <div class="divider-gold"></div>
-      <p class="hero__subtitle">Vodka · Cigares</p>
-      <a href="#revelation" class="link-arrow">Découvrir</a>
-    </div>
-    <div class="hero__img">
-      <img src={`${base}/images/csco-coffret-promo.jpg`} alt="CSCO Excellence" class="img-cover">
-    </div>
-  </section>
-
-  <!-- ========================================
-       SECTION 2 — RÉVÉLATION HOVERLA
-       ======================================== -->
-  <section id="revelation" class="revelation">
-    <div class="revelation__text">
-      <p class="t-label">Vodka artisanale ukrainienne</p>
-      <div class="divider-gold" style="width: 60px; margin: 32px 0;"></div>
-      <h2 class="revelation__title">HOVERLA</h2>
-      <div class="revelation__content">
-        <p>Née au cœur des Carpates.<br>Distillée cinq fois.<br>Filtrée au charbon actif.</p>
-        <a href={`${base}/vodka`} class="link-arrow-gold">Découvrir la vodka</a>
-      </div>
-    </div>
-    <div class="revelation__img">
-      <img src={`${base}/images/hoverla-gamme-bar.jpg`} alt="Gamme Hoverla" class="img-cover">
+      <p class="hero__subtitle">Vodka artisanale · Cigares premium</p>
+      <a href="#hoverla" class="hero__cta">
+        <span>Découvrir</span>
+        <svg class="hero__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 3v10M8 13l-4-4M8 13l4-4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
   </section>
 
-  <!-- ========================================
-       SECTION 3 — LA MAISON CSCO
-       ======================================== -->
-  <section class="maison">
-    <blockquote class="maison__quote">
-      « Né au cœur des Carpates,<br>forgé dans l'excellence. »
-    </blockquote>
-  </section>
-
-  <!-- ========================================
-       SECTION 4 — LA GAMME (horizontal scroll)
-       ======================================== -->
-  <section class="gamme">
-    <p class="t-label" style="padding-left: 10vw; margin-bottom: 40px;">La gamme · 7 expressions</p>
-    <div class="gamme__scroll" id="gamme-scroll">
-      
-      <div class="gamme__item">
-        <img src={`${base}/images/hoverla-official-1.jpg`} alt="Pure" class="gamme__bottle">
-        <p class="gamme__item-name">Pure</p>
-        <div class="gamme__item-color" style="background: #D4AF37;"></div>
+  <!-- SECTION HOVERLA -->
+  <section id="hoverla" class="section-hoverla">
+    <div class="section-hoverla__inner">
+      <div class="section-hoverla__text">
+        <div class="t-label">Vodka artisanale ukrainienne</div>
+        <h2 class="t-section">Née dans<br/>les Carpates</h2>
+        <div class="divider-gold"></div>
+        <p class="t-body">
+          HOVERLA incarne l'excellence de la distillation ukrainienne. 
+          Élaborée à partir de blé pur des Carpates et d'une eau de source cristalline, 
+          notre vodka se décline en sept saveurs authentiques qui révèlent 
+          la richesse d'un terroir préservé.
+        </p>
+        <a href={`${base}/vodka`} class="btn-primary">Explorer HOVERLA</a>
       </div>
-
-      <div class="gamme__item">
-        <img src={`${base}/images/hoverla-official-2.jpg`} alt="Apple" class="gamme__bottle">
-        <p class="gamme__item-name">Apple</p>
-        <div class="gamme__item-color" style="background: #8FBC8F;"></div>
-      </div>
-
-      <div class="gamme__item">
-        <img src={`${base}/images/hoverla-official-3.jpg`} alt="Pineapple" class="gamme__bottle">
-        <p class="gamme__item-name">Pineapple</p>
-        <div class="gamme__item-color" style="background: #FFD700;"></div>
-      </div>
-
-      <div class="gamme__item">
-        <img src={`${base}/images/hoverla-official-4.jpg`} alt="Acai Berry" class="gamme__bottle">
-        <p class="gamme__item-name">Acai Berry</p>
-        <div class="gamme__item-color" style="background: #6A5ACD;"></div>
-      </div>
-
-      <div class="gamme__item">
-        <img src={`${base}/images/hoverla-official-5.jpg`} alt="Peach" class="gamme__bottle">
-        <p class="gamme__item-name">Peach</p>
-        <div class="gamme__item-color" style="background: #FFDAB9;"></div>
-      </div>
-
-      <div class="gamme__item">
-        <img src={`${base}/images/hoverla-official-6.jpg`} alt="Coconut" class="gamme__bottle">
-        <p class="gamme__item-name">Coconut</p>
-        <div class="gamme__item-color" style="background: #8B4513;"></div>
-      </div>
-
-      <div class="gamme__item">
-        <img src={`${base}/images/hoverla-official-7.jpg`} alt="Red Berry" class="gamme__bottle">
-        <p class="gamme__item-name">Red Berry</p>
-        <div class="gamme__item-color" style="background: #DC143C;"></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================
-       SECTION 5 — CIGARES MONT NOIR
-       ======================================== -->
-  <section class="cigares">
-    <div class="cigares__text">
-      <h2 class="cigares__title">CIGARES<br>MONT NOIR</h2>
-      <div class="divider-gold"></div>
-      <p class="cigares__subtitle">CSCO × Vegas Corporan</p>
-      <p class="cigares__desc">Édition exclusive</p>
-      <a href={`${base}/cigares`} class="link-arrow">En savoir plus</a>
-    </div>
-    <div class="cigares__img">
-      <img src={`${base}/images/hoverla-cigare-gros-plan.jpg`} alt="Cigares Mont Noir" class="img-cover">
-    </div>
-    <div class="cigares__divider"></div>
-  </section>
-
-  <!-- ========================================
-       SECTION 6 — COFFRETS
-       ======================================== -->
-  <section class="coffrets">
-    <div class="coffrets__container">
-      <div class="coffrets__img-wrapper">
-        <img src={`${base}/images/csco-coffrets-cigare.jpg`} alt="Coffrets CSCO">
-      </div>
-      <h2 class="coffrets__title">COFFRETS<br>D'EXCEPTION</h2>
-      <p class="coffrets__desc">L'alliance parfaite entre vodka artisanale et cigares premium. Des coffrets pensés pour les connaisseurs.</p>
-      <div class="coffrets__ctas">
-        <a href={`${base}/coffrets`} class="btn-primary">Découvrir</a>
-        <a href={`${base}/contact`} class="btn-secondary">Nous contacter</a>
+      <div class="section-hoverla__image">
+        <img src={`${base}/images/hoverla-official-1.jpg`} alt="HOVERLA Vodka" />
       </div>
     </div>
   </section>
 
+  <!-- SECTION MONT NOIR -->
+  <section class="section-mont-noir">
+    <div class="section-mont-noir__inner">
+      <div class="section-mont-noir__image">
+        <img src={`${base}/images/bg-cigare.jpg`} alt="Mont Noir Cigares" />
+      </div>
+      <div class="section-mont-noir__text">
+        <div class="t-label">Cigares premium</div>
+        <h2 class="t-section">L'art<br/>du cigare</h2>
+        <div class="divider-gold"></div>
+        <p class="t-body">
+          Mont Noir représente l'alliance entre tradition dominicaine 
+          et excellence suisse. Une collaboration exclusive avec Vegas Corporan 
+          qui célèbre le savoir-faire artisanal et la passion du cigare.
+        </p>
+        <a href={`${base}/cigares`} class="btn-primary">Découvrir Mont Noir</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CHIFFRES -->
+  <section class="section-stats">
+    <div class="section-stats__inner">
+      <div class="stat">
+        <div class="stat__number">7</div>
+        <div class="stat__label">Saveurs artisanales</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">100<span>%</span></div>
+        <div class="stat__label">Artisanale</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">1</div>
+        <div class="stat__label">Distributeur exclusif Suisse</div>
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <style>
   /* ========================================
-     SECTION 1 — HERO ÉDITORIAL
+     HERO FULLSCREEN
      ======================================== */
   .hero {
-    display: grid;
-    grid-template-columns: 40vw 1fr;
-    height: 100svh;
-    background: var(--black);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
-  .hero__text {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 0 80px 10vw;
+  .hero__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/bg-spirits-dark.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4);
+    z-index: -1;
+  }
+
+  .hero__content {
+    text-align: center;
+    z-index: 1;
+    padding: 0 32px;
   }
 
   .hero__title {
     font-family: var(--display);
     font-weight: 300;
-    font-size: clamp(56px, 8vw, 88px);
-    line-height: 0.85;
+    font-size: clamp(64px, 12vw, 140px);
+    line-height: 0.95;
     letter-spacing: -0.01em;
     color: var(--white);
-    margin-bottom: 20px;
+    margin-bottom: 32px;
+    animation: fadeUp 1s ease forwards;
   }
 
   .hero__subtitle {
     font-family: var(--body);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 32px;
-  }
-
-  .hero__img {
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .hero__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  /* ========================================
-     SECTION 2 — RÉVÉLATION HOVERLA
-     ======================================== */
-  .revelation {
-    display: grid;
-    grid-template-columns: 1fr 40%;
-    min-height: 70vh;
-    background: var(--cream);
-  }
-
-  .revelation__text {
-    padding: 80px 80px 80px 12vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .revelation__title {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: clamp(64px, 8vw, 96px);
-    line-height: 1;
-    color: var(--text-dark);
-    margin-bottom: 32px;
-  }
-
-  .revelation__content p {
-    font-family: var(--body);
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--text-warm);
-    margin-bottom: 32px;
-  }
-
-  .link-arrow-gold {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--body);
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    color: var(--text-dark);
-    text-decoration: underline;
-    text-underline-offset: 4px;
-    transition: color 0.3s ease;
-  }
-
-  .link-arrow-gold:hover {
-    color: var(--gold);
-  }
-
-  .link-arrow-gold::after {
-    content: '→';
-    font-size: 14px;
-  }
-
-  .revelation__img {
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .revelation__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  /* ========================================
-     SECTION 3 — LA MAISON CSCO
-     ======================================== */
-  .maison {
-    background: var(--black);
-    padding: 160px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .maison__quote {
-    font-family: var(--display);
-    font-weight: 300;
-    font-style: italic;
-    font-size: clamp(40px, 6vw, 80px);
-    line-height: 1.2;
-    color: var(--white);
-    max-width: 900px;
-    text-align: center;
-  }
-
-  /* ========================================
-     SECTION 4 — LA GAMME
-     ======================================== */
-  .gamme {
-    background: var(--black);
-    padding: 80px 0;
-  }
-
-  .gamme__scroll {
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding: 60px 10vw;
-    cursor: grab;
-  }
-
-  .gamme__scroll::-webkit-scrollbar {
-    display: none;
-  }
-
-  .gamme__scroll:active {
-    cursor: grabbing;
-  }
-
-  .gamme__item {
-    flex: 0 0 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 40px;
-    border-right: 1px solid rgba(200, 168, 78, 0.2);
-  }
-
-  .gamme__item:last-child {
-    border-right: none;
-  }
-
-  .gamme__bottle {
-    height: 220px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5));
-    transition: transform 0.5s ease;
-  }
-
-  .gamme__item:hover .gamme__bottle {
-    transform: translateY(-12px);
-  }
-
-  .gamme__item-name {
-    font-family: var(--display);
-    font-size: 20px;
-    font-weight: 300;
-    color: var(--white);
-    margin-top: 24px;
-    letter-spacing: 0.08em;
-  }
-
-  .gamme__item-color {
-    width: 24px;
-    height: 2px;
-    margin-top: 8px;
-  }
-
-  /* ========================================
-     SECTION 5 — CIGARES MONT NOIR
-     ======================================== */
-  .cigares {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    min-height: 80vh;
-    background: var(--black-warm);
-    position: relative;
-  }
-
-  .cigares__text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 80px 80px 10vw;
-  }
-
-  .cigares__title {
-    font-family: var(--display);
-    font-weight: 300;
-    font-size: clamp(56px, 7vw, 72px);
-    line-height: 0.95;
-    color: var(--white);
-    margin-bottom: 20px;
-  }
-
-  .cigares__subtitle {
-    font-family: var(--body);
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--white);
-    margin-bottom: 8px;
-  }
-
-  .cigares__desc {
-    font-family: var(--body);
     font-size: 13px;
     font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
     color: var(--white-60);
-    margin-bottom: 32px;
+    margin-bottom: 64px;
+    animation: fadeUp 1s ease 0.2s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
   }
 
-  .cigares__img {
-    height: 100%;
-    overflow: hidden;
+  .hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 16px 0;
+    animation: fadeUp 1s ease 0.4s forwards;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: transform 0.3s ease;
   }
 
-  .cigares__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+  .hero__cta:hover {
+    transform: translateY(8px);
   }
 
-  .cigares__divider {
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    bottom: 10%;
-    width: 1px;
-    background: var(--gold-dim);
+  .hero__arrow {
+    animation: bounce 2s ease infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
   }
 
   /* ========================================
-     SECTION 6 — COFFRETS
+     SECTION HOVERLA
      ======================================== */
-  .coffrets {
-    background: var(--cream);
-    padding: 120px 40px;
+  .section-hoverla {
+    padding: 160px 10vw;
+    background: var(--black);
   }
 
-  .coffrets__container {
-    max-width: 700px;
+  .section-hoverla__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-hoverla__text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .section-hoverla__image {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a 0%, #080808 100%);
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .section-hoverla__image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    mix-blend-mode: multiply;
+    filter: brightness(1.1) contrast(1.05);
+  }
+
+  /* ========================================
+     SECTION MONT NOIR
+     ======================================== */
+  .section-mont-noir {
+    padding: 160px 10vw;
+    background: var(--black-warm);
+  }
+
+  .section-mont-noir__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-mont-noir__text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .section-mont-noir__image {
+    border-radius: 4px;
+    overflow: hidden;
+    height: 600px;
+  }
+
+  .section-mont-noir__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ========================================
+     SECTION STATS
+     ======================================== */
+  .section-stats {
+    padding: 120px 10vw;
+    background: var(--black);
+    border-top: 1px solid var(--gold-dim);
+  }
+
+  .section-stats__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
   }
 
-  .coffrets__img-wrapper {
-    width: 110%;
-    margin-left: -5%;
-    margin-bottom: 48px;
-    overflow: hidden;
-  }
-
-  .coffrets__img-wrapper img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .coffrets__title {
+  .stat__number {
     font-family: var(--display);
     font-weight: 300;
-    font-size: clamp(48px, 6vw, 72px);
+    font-size: clamp(64px, 8vw, 96px);
     line-height: 1;
-    color: var(--text-dark);
-    margin-bottom: 24px;
+    color: var(--gold);
+    margin-bottom: 16px;
   }
 
-  .coffrets__desc {
+  .stat__number span {
+    font-size: 0.5em;
+    color: var(--white-60);
+  }
+
+  .stat__label {
     font-family: var(--body);
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--text-warm);
-    margin-bottom: 40px;
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .coffrets__ctas {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-60);
   }
 
   /* ========================================
-     MOBILE RESPONSIVE
+     MOBILE
      ======================================== */
   @media (max-width: 768px) {
-    .hero {
-      grid-template-columns: 1fr;
-      position: relative;
+    .hero__title {
+      font-size: clamp(48px, 10vw, 72px);
     }
 
-    .hero__img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-
-    .hero__img::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 50%;
-      background: linear-gradient(to top, rgba(8, 8, 8, 0.95), transparent);
-    }
-
-    .hero__text {
-      position: relative;
-      z-index: 1;
-      padding: 0 32px 60px;
-    }
-
-    .revelation {
-      grid-template-columns: 1fr;
-    }
-
-    .revelation__text {
-      padding: 60px 32px;
-    }
-
-    .revelation__img {
-      min-height: 400px;
-    }
-
-    .maison {
-      padding: 100px 32px;
-    }
-
-    .gamme__scroll {
-      padding: 40px 32px;
-    }
-
-    .cigares {
-      grid-template-columns: 1fr;
-    }
-
-    .cigares__text {
-      padding: 60px 32px;
-    }
-
-    .cigares__img {
-      min-height: 400px;
-    }
-
-    .cigares__divider {
-      display: none;
-    }
-
-    .coffrets {
+    .section-hoverla {
       padding: 80px 32px;
     }
 
-    .coffrets__img-wrapper {
-      width: 100%;
-      margin-left: 0;
+    .section-hoverla__inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
     }
 
-    .coffrets__ctas {
-      flex-direction: column;
-      align-items: stretch;
+    .section-hoverla__image {
+      padding: 40px;
+    }
+
+    .section-mont-noir {
+      padding: 80px 32px;
+    }
+
+    .section-mont-noir__inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .section-mont-noir__image {
+      height: 400px;
+    }
+
+    /* Inverse order on mobile: text first */
+    .section-mont-noir__text {
+      order: 1;
+    }
+
+    .section-mont-noir__image {
+      order: 2;
+    }
+
+    .section-stats {
+      padding: 80px 32px;
+    }
+
+    .section-stats__inner {
+      grid-template-columns: 1fr;
+      gap: 48px;
     }
   }
 </style>
-
-<script>
-  // Drag-scroll pour la gamme
-  const scroll = document.getElementById('gamme-scroll');
-  if (scroll) {
-    let isDown = false;
-    let startX: number;
-    let scrollLeft: number;
-
-    scroll.addEventListener('mousedown', (e) => {
-      isDown = true;
-      startX = e.pageX - scroll.offsetLeft;
-      scrollLeft = scroll.scrollLeft;
-    });
-
-    scroll.addEventListener('mouseleave', () => {
-      isDown = false;
-    });
-
-    scroll.addEventListener('mouseup', () => {
-      isDown = false;
-    });
-
-    scroll.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - scroll.offsetLeft;
-      const walk = (x - startX) * 1.5;
-      scroll.scrollLeft = scrollLeft - walk;
-    });
-  }
-</script>

@@ -4,21 +4,101 @@
    ======================================== */
 
 /* ========================================
-   DESIGN TOKENS
+   DESIGN TOKENS — COMPLETE SYSTEM
    ======================================== */
 :root {
+  /* ========== COLORS ========== */
+  /* Primary */
   --black: #080808;
   --black-warm: #0D0A06;
   --cream: #F2EDE4;
   --cream-dark: #E8E0D4;
   --gold: #C8A84E;
   --gold-dim: rgba(200, 168, 78, 0.3);
+  --gold-hover: #D4B65E;
   --white: #F5F2EC;
   --white-60: rgba(245, 242, 236, 0.6);
+  --white-40: rgba(245, 242, 236, 0.4);
+  --white-20: rgba(245, 242, 236, 0.2);
+  
+  /* Text */
   --text-dark: #1a1a1a;
   --text-warm: #5a5248;
+  
+  /* Semantic */
+  --success: #4A7C59;
+  --error: #8B3A3A;
+  
+  /* ========== SPACING (8pt grid) ========== */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+  
+  /* Section spacing */
+  --space-section-sm: 80px;
+  --space-section-md: 120px;
+  --space-section-lg: 160px;
+  
+  /* ========== TYPOGRAPHY ========== */
   --display: 'Cormorant Garamond', serif;
   --body: 'Montserrat', sans-serif;
+  
+  /* Fluid type scale */
+  --text-xs: 10px;
+  --text-sm: 13px;
+  --text-base: 15px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  
+  /* ========== BORDERS ========== */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-full: 9999px;
+  --border-thin: 1px;
+  
+  /* ========== SHADOWS ========== */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.25);
+  --shadow-xl: 0 32px 64px rgba(0, 0, 0, 0.35);
+  
+  /* ========== ANIMATION ========== */
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 800ms;
+  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  
+  /* ========== Z-INDEX ========== */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-overlay: 900;
+  --z-modal: 1000;
+  --z-toast: 1500;
+  
+  /* ========== BREAKPOINTS (for reference) ========== */
+  /* xs: 0, sm: 480px, md: 640px, lg: 768px, xl: 1024px, 2xl: 1280px */
+  
+  /* ========== CONTAINERS ========== */
+  --container-sm: 640px;
+  --container-md: 800px;
+  --container-lg: 1200px;
+  --container-xl: 1400px;
 }
 
 /* ========================================

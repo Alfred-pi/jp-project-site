@@ -3,179 +3,377 @@ import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="MONT NOIR — Cigares Premium | CSCO">
-  
+<Layout title="Mont Noir — L'Art du Cigare">
   <!-- HERO -->
-  <section class="hero-page">
-    <img src={`${base}/images/hoverla-cigare-gros-plan.jpg`} alt="Cigares Mont Noir" class="hero-page__bg">
-    <div class="hero-page__overlay"></div>
-    <div class="hero-page__content">
-      <h1 class="hero-page__title">MONT NOIR</h1>
-      <p class="hero-page__subtitle">Cigares Premium · Édition Exclusive</p>
+  <section class="hero-cigare">
+    <div class="hero-cigare__image">
+      <img src={`${base}/images/bg-cigare.jpg`} alt="Mont Noir Cigares" />
+    </div>
+    <div class="hero-cigare__overlay">
+      <div class="t-label">Cigares premium</div>
+      <h1 class="t-hero">Mont Noir</h1>
+      <p class="hero-cigare__tagline">L'excellence dominicaine · L'élégance suisse</p>
     </div>
   </section>
 
-  <!-- L'ÉDITION -->
-  <section class="edition">
-    <div class="edition__container">
-      <p class="t-label">CSCO × Vegas Corporan</p>
-      <div class="divider-gold" style="margin: 32px 0;"></div>
-      <h2 class="t-section" style="margin-bottom: 32px;">Une collaboration<br>d'exception</h2>
-      <div class="edition__content">
-        <p>Mont Noir est né d'une rencontre entre l'excellence de CSCO et le savoir-faire artisanal de Vegas Corporan, maître cigare reconnu.</p>
-        <p>Chaque cigare est roulé à la main, avec des feuilles de tabac sélectionnées parmi les meilleures plantations. Une expérience sensorielle unique qui complète parfaitement la dégustation de vodka HOVERLA.</p>
-        <p>Mont Noir n'est pas simplement un cigare. C'est une déclaration d'intention, un moment suspendu, une célébration du raffinement.</p>
+  <!-- INTRO -->
+  <section class="intro-cigare">
+    <div class="intro-cigare__inner">
+      <div class="intro-cigare__left">
+        <h2 class="t-section">Une collaboration<br/>d'exception</h2>
       </div>
+      <div class="intro-cigare__right">
+        <div class="divider-gold"></div>
+        <p class="t-body">
+          Mont Noir incarne l'alliance parfaite entre le savoir-faire dominicain 
+          et l'exigence suisse. Une collaboration exclusive avec <strong>Vegas Corporan</strong>, 
+          maître artisan réputé dans l'univers du cigare premium.
+        </p>
+        <p class="t-body">
+          Chaque cigare est le fruit d'une sélection rigoureuse des meilleurs tabacs, 
+          d'un vieillissement patient en caves naturelles, et d'un roulage artisanal 
+          qui respecte les traditions ancestrales. Mont Noir ne se fume pas, il se savoure.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSCO × VEGAS CORPORAN -->
+  <section class="collab">
+    <div class="collab__inner">
+      <div class="collab__logo">
+        <div class="collab__logo-item">CSCO</div>
+        <div class="collab__logo-separator">×</div>
+        <div class="collab__logo-item">Vegas Corporan</div>
+      </div>
+      <p class="t-body" style="text-align: center; max-width: 600px; margin: 0 auto;">
+        Quand l'excellence suisse rencontre la tradition dominicaine, 
+        naît un cigare qui transcende les frontières et célèbre l'artisanat.
+      </p>
     </div>
   </section>
 
   <!-- L'EXPÉRIENCE -->
   <section class="experience">
-    <div class="experience__grid">
-      <div class="experience__img">
-        <img src={`${base}/images/csco-coffret-ouvert.jpg`} alt="Coffret Mont Noir">
-      </div>
-      <div class="experience__text">
-        <h2 class="t-section" style="margin-bottom: 24px;">L'expérience<br>Mont Noir</h2>
-        <p>Nos coffrets associent cigares premium et vodka artisanale dans un écrin pensé pour les connaisseurs.</p>
-        <p>Chaque détail compte : du packaging élégant à la qualité des produits, tout est conçu pour offrir un moment inoubliable.</p>
-        <a href={`${base}/coffrets`} class="btn-primary" style="margin-top: 32px;">Découvrir les coffrets</a>
+    <div class="experience__inner">
+      <div class="t-label">L'expérience Mont Noir</div>
+      <h2 class="t-section">Un rituel<br/>à part</h2>
+      <div class="divider-gold" style="margin: 32px auto;"></div>
+      
+      <div class="experience__grid">
+        <div class="experience__item">
+          <div class="experience__icon">🌿</div>
+          <h3 class="experience__title">Tabacs sélectionnés</h3>
+          <p class="experience__desc">
+            Feuilles nobles issues des meilleures plantations dominicaines, 
+            vieillies en caves naturelles pendant plusieurs années.
+          </p>
+        </div>
+        
+        <div class="experience__item">
+          <div class="experience__icon">✋</div>
+          <h3 class="experience__title">Roulage artisanal</h3>
+          <p class="experience__desc">
+            Chaque cigare est roulé à la main par des maîtres artisans, 
+            selon des techniques transmises de génération en génération.
+          </p>
+        </div>
+        
+        <div class="experience__item">
+          <div class="experience__icon">⏳</div>
+          <h3 class="experience__title">Vieillissement patient</h3>
+          <p class="experience__desc">
+            Un temps de repos essentiel qui permet aux arômes 
+            de s'harmoniser et de révéler toute leur complexité.
+          </p>
+        </div>
+        
+        <div class="experience__item">
+          <div class="experience__icon">🎩</div>
+          <h3 class="experience__title">Élégance absolue</h3>
+          <p class="experience__desc">
+            Packaging premium, présentation soignée, 
+            pour un cigare qui se vit comme une expérience.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta-contact">
-    <div class="cta-contact__content">
-      <h2 class="t-section" style="margin-bottom: 24px;">Intéressé ?</h2>
-      <p class="t-body" style="max-width: 600px; margin: 0 auto 40px;">Contactez-nous pour plus d'informations sur nos cigares et nos coffrets exclusifs.</p>
+  <!-- AMBIANCE CLUB -->
+  <section class="ambiance">
+    <div class="ambiance__bg"></div>
+    <div class="ambiance__content">
+      <h2 class="t-quote">"Un cigare n'est pas<br/>qu'un cigare.<br/>C'est un instant."</h2>
+    </div>
+  </section>
+
+  <!-- CTA CONTACT -->
+  <section class="cta-cigare">
+    <div class="cta-cigare__inner">
+      <div class="t-label">Distribution exclusive</div>
+      <h2 class="t-section">Distribué en Suisse<br/>par Suisse Prestige</h2>
       <a href={`${base}/contact`} class="btn-primary">Nous contacter</a>
     </div>
   </section>
-
 </Layout>
 
 <style>
-  /* HERO */
-  .hero-page {
+  /* ========================================
+     HERO CIGARE
+     ======================================== */
+  .hero-cigare {
     position: relative;
-    height: 90svh;
+    width: 100%;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
   }
 
-  .hero-page__bg {
+  .hero-cigare__image {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .hero-cigare__image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(8, 8, 8, 0.4) 0%, rgba(8, 8, 8, 0.8) 100%);
+  }
+
+  .hero-cigare__image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 0;
   }
 
-  .hero-page__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(8, 8, 8, 0.5);
+  .hero-cigare__overlay {
+    text-align: center;
     z-index: 1;
+    padding: 0 32px;
   }
 
-  .hero-page__content {
-    position: relative;
-    z-index: 2;
+  .hero-cigare__tagline {
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--white-60);
+    margin-top: 24px;
+  }
+
+  /* ========================================
+     INTRO CIGARE
+     ======================================== */
+  .intro-cigare {
+    padding: 160px 10vw;
+    background: var(--black);
+  }
+
+  .intro-cigare__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .intro-cigare__right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .intro-cigare__right strong {
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  /* ========================================
+     COLLAB
+     ======================================== */
+  .collab {
+    padding: 120px 10vw;
+    background: var(--black-warm);
+    border-top: 1px solid var(--gold-dim);
+    border-bottom: 1px solid var(--gold-dim);
+  }
+
+  .collab__inner {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
   }
 
-  .hero-page__title {
+  .collab__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .collab__logo-item {
     font-family: var(--display);
     font-weight: 300;
-    font-size: clamp(72px, 10vw, 120px);
-    line-height: 0.9;
+    font-size: clamp(32px, 5vw, 56px);
+    letter-spacing: 0.15em;
+    color: var(--gold);
+  }
+
+  .collab__logo-separator {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: clamp(24px, 4vw, 40px);
+    color: var(--white-60);
+  }
+
+  /* ========================================
+     EXPÉRIENCE
+     ======================================== */
+  .experience {
+    padding: 160px 10vw;
+    background: var(--black);
+    text-align: center;
+  }
+
+  .experience__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .experience__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 60px;
+    margin-top: 80px;
+  }
+
+  .experience__item {
+    text-align: center;
+  }
+
+  .experience__icon {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+
+  .experience__title {
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     color: var(--white);
     margin-bottom: 16px;
   }
 
-  .hero-page__subtitle {
+  .experience__desc {
     font-family: var(--body);
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--white-60);
   }
 
-  /* ÉDITION */
-  .edition {
+  /* ========================================
+     AMBIANCE
+     ======================================== */
+  .ambiance {
+    position: relative;
+    padding: 160px 10vw;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .ambiance__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/bg-bar-luxe.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.3);
+    z-index: -1;
+  }
+
+  .ambiance__content {
+    text-align: center;
+    z-index: 1;
+  }
+
+  /* ========================================
+     CTA CIGARE
+     ======================================== */
+  .cta-cigare {
+    padding: 120px 10vw;
     background: var(--black-warm);
-    padding: 120px 40px;
+    border-top: 1px solid var(--gold-dim);
+    text-align: center;
   }
 
-  .edition__container {
+  .cta-cigare__inner {
     max-width: 800px;
     margin: 0 auto;
   }
 
-  .edition__content p {
-    font-family: var(--body);
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--white-60);
-    margin-bottom: 24px;
+  .cta-cigare__inner h2 {
+    margin: 24px 0 48px;
   }
 
-  /* EXPÉRIENCE */
-  .experience {
-    background: var(--cream);
-    padding: 120px 40px;
-  }
-
-  .experience__grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-  }
-
-  .experience__img img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .experience__text h2 {
-    color: var(--text-dark);
-  }
-
-  .experience__text p {
-    font-family: var(--body);
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.9;
-    color: var(--text-warm);
-    margin-bottom: 16px;
-  }
-
-  /* CTA CONTACT */
-  .cta-contact {
-    background: var(--black);
-    padding: 120px 40px;
-    text-align: center;
-  }
-
-  /* MOBILE */
+  /* ========================================
+     MOBILE
+     ======================================== */
   @media (max-width: 768px) {
-    .experience__grid {
+    .intro-cigare {
+      padding: 80px 32px;
+    }
+
+    .intro-cigare__inner {
       grid-template-columns: 1fr;
       gap: 40px;
+    }
+
+    .collab {
+      padding: 80px 32px;
+    }
+
+    .collab__logo {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .experience {
+      padding: 80px 32px;
+    }
+
+    .experience__grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+
+    .ambiance {
+      padding: 100px 32px;
+    }
+
+    .cta-cigare {
+      padding: 80px 32px;
     }
   }
 </style>
