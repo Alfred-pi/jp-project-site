@@ -1,307 +1,407 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 
-const variants = [
-  { name: "Original", desc: "La pureté absolue. Eau de source des Carpates et blé ukrainien.", img: "/images/vodka/hoverla-official-1.jpg" },
-  { name: "Honey", desc: "Miel de fleurs sauvages des montagnes. Douceur et caractère.", img: "/images/vodka/hoverla-official-2.jpg" },
-  { name: "Birch", desc: "Sève de bouleau infusée. Fraîcheur minérale unique.", img: "/images/vodka/hoverla-official-3.jpg" },
-  { name: "Pepper", desc: "Piment rouge des Carpates. Chaleur et intensité.", img: "/images/vodka/hoverla-official-4.jpg" },
-  { name: "Cranberry", desc: "Canneberges sauvages cueillies à maturité. Fruité et vif.", img: "/images/vodka/hoverla-official-5.jpg" },
-  { name: "Herbal", desc: "Herbes aromatiques des prairies d'altitude. Complexe et subtil.", img: "/images/vodka/hoverla-official-6.jpg" },
-  { name: "Lemon", desc: "Zestes de citron frais. Vivacité et élégance.", img: "/images/vodka/hoverla-official-7.jpg" },
+const saveurs = [
+  {
+    name: 'Original',
+    color: '#C8A84E',
+    description: 'Pure expression du blé des Carpates. Cristalline et élégante.',
+  },
+  {
+    name: 'Honey',
+    color: '#D4A24E',
+    description: 'Miel artisanal des montagnes. Douceur authentique.',
+  },
+  {
+    name: 'Pepper',
+    color: '#8B4513',
+    description: 'Poivre noir subtil. Caractère affirmé.',
+  },
+  {
+    name: 'Cherry',
+    color: '#A52A2A',
+    description: 'Cerise griotte. Équilibre parfait entre fruit et finesse.',
+  },
+  {
+    name: 'Cranberry',
+    color: '#DC143C',
+    description: 'Canneberge sauvage. Fraîcheur vivifiante.',
+  },
+  {
+    name: 'Birch',
+    color: '#8FBC8F',
+    description: 'Sève de bouleau. Tradition ancestrale.',
+  },
+  {
+    name: 'Horseradish',
+    color: '#F5F5DC',
+    description: 'Raifort piquant. Pour les audacieux.',
+  },
 ];
 ---
 
-<Layout title="Vodka Hoverla | Vodka Artisanale des Carpates | Swiss Prestige" description="Découvrez Hoverla, vodka artisanale ukrainienne élaborée avec l'eau pure des Carpates. Sept saveurs d'exception, distribuées exclusivement par Swiss Prestige en Suisse.">
-
+<Layout title="HOVERLA — Vodka Artisanale Ukrainienne">
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero__bg"></div>
-    <div class="hero__overlay"></div>
-    <div class="hero__content">
+  <section class="hero-vodka">
+    <div class="hero-vodka__bg"></div>
+    <div class="hero-vodka__content">
       <div class="t-label">Vodka artisanale ukrainienne</div>
-      <h1 class="hero__title">Hoverla</h1>
-      <p class="hero__subtitle">Distillée à 2 061 mètres d'altitude. Sept saveurs.</p>
+      <h1 class="t-hero">HOVERLA</h1>
+      <p class="hero-vodka__tagline">Sept saveurs · Une excellence</p>
+    </div>
+    <div class="hero-vodka__lineup">
+      <img src={`${base}/images/hoverla-lineup-nobg.png`} alt="HOVERLA Lineup" />
     </div>
   </section>
 
-  <!-- STORY -->
-  <section class="story">
-    <div class="story__inner">
-      <div class="story__text">
-        <div class="t-label">L'histoire</div>
-        <h2 class="story__heading">L'eau pure<br/>des Carpates</h2>
+  <!-- INTRO -->
+  <section class="intro-vodka">
+    <div class="intro-vodka__inner">
+      <div class="intro-vodka__left">
+        <h2 class="t-section">L'esprit<br/>des Carpates</h2>
+      </div>
+      <div class="intro-vodka__right">
         <div class="divider-gold"></div>
-        <p class="t-body">L'eau de source traverse la roche des Carpates depuis des millénaires avant d'atteindre la distillerie. Le blé est cultivé en altitude, dans un sol que l'industrie n'a jamais touché. C'est cette combinaison qui donne à Hoverla sa pureté — nette, minérale, immédiate.</p>
-        <p class="t-body">Chaque bouteille est distillée en petits lots. Sept infusions différentes — du classique au miel de montagne, en passant par la sève de bouleau — qui explorent chacune un aspect de ce terroir unique. Hoverla porte le nom du plus haut sommet d'Ukraine. Ce n'est pas un hasard.</p>
-      </div>
-      <div class="story__image">
-        <img src="/images/vodka/hoverla-official-1.jpg" alt="Bouteille Hoverla Original — vodka artisanale premium des Carpates" />
-      </div>
-    </div>
-  </section>
-
-  <!-- VARIANTS GRID -->
-  <section class="variants">
-    <div class="variants__inner">
-      <div class="variants__header">
-        <div class="t-label">La collection</div>
-        <h2 class="t-section">Sept caractères</h2>
-        <div class="divider-gold"></div>
-      </div>
-
-      <div class="variants__grid">
-        {variants.map((v) => (
-          <div class="variant-card">
-            <div class="variant-card__image">
-              <img src={v.img} alt={`Vodka Hoverla ${v.name} — saveur artisanale premium`} />
-            </div>
-            <div class="variant-card__info">
-              <h3 class="variant-card__name">{v.name}</h3>
-              <p class="variant-card__desc">{v.desc}</p>
-            </div>
-          </div>
-        ))}
+        <p class="t-body">
+          HOVERLA tire son nom du plus haut sommet des Carpates ukrainiennes, 
+          symbole de pureté et d'excellence. Distillée selon des méthodes traditionnelles 
+          transmises de génération en génération, notre vodka incarne la rencontre entre 
+          un terroir préservé et un savoir-faire artisanal exceptionnel.
+        </p>
+        <p class="t-body">
+          Chaque bouteille célèbre l'eau cristalline des sources de montagne et 
+          le blé noble des plaines fertiles. Une vodka qui se déguste, se savoure, 
+          et révèle toute la richesse d'un patrimoine authentique.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- LINEUP -->
-  <section class="lineup">
-    <div class="lineup__inner">
-      <img src="/images/vodka/hoverla-scene.jpg" alt="Verres Hoverla Premium Vodka — dégustation" class="lineup__img" />
+  <!-- LES 7 SAVEURS -->
+  <section class="saveurs">
+    <div class="saveurs__header">
+      <div class="t-label">Les sept expressions</div>
+      <h2 class="t-section">Nos saveurs</h2>
+    </div>
+    
+    <div class="saveurs__grid">
+      {saveurs.map((saveur) => (
+        <div class="saveur-card">
+          <div class="saveur-card__accent" style={`background: ${saveur.color};`}></div>
+          <h3 class="saveur-card__name">{saveur.name}</h3>
+          <p class="saveur-card__desc">{saveur.description}</p>
+        </div>
+      ))}
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="vodka-cta">
-    <div class="vodka-cta__inner">
-      <h2 class="vodka-cta__title">Commander Hoverla</h2>
-      <p class="t-body" style="text-align:center; max-width:500px; margin:0 auto 40px;">Distribuée exclusivement par Swiss Prestige en Suisse. Contactez notre équipe pour choisir vos saveurs.</p>
-      <a href="/contact" class="btn-primary">Passer commande</a>
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="process__inner">
+      <div class="t-label">Artisanat</div>
+      <h2 class="t-section">Une distillation<br/>d'exception</h2>
+      <div class="divider-gold"></div>
+      
+      <div class="process__steps">
+        <div class="process__step">
+          <div class="process__step-number">01</div>
+          <h3 class="process__step-title">Sélection du blé</h3>
+          <p class="process__step-desc">
+            Blé pur cultivé dans les plaines fertiles d'Ukraine, 
+            sélectionné pour sa qualité exceptionnelle.
+          </p>
+        </div>
+        
+        <div class="process__step">
+          <div class="process__step-number">02</div>
+          <h3 class="process__step-title">Eau de source</h3>
+          <p class="process__step-desc">
+            Eau cristalline puisée dans les sources des Carpates, 
+            naturellement pure et minérale.
+          </p>
+        </div>
+        
+        <div class="process__step">
+          <div class="process__step-number">03</div>
+          <h3 class="process__step-title">Distillation traditionnelle</h3>
+          <p class="process__step-desc">
+            Triple distillation selon des méthodes artisanales 
+            transmises depuis plusieurs générations.
+          </p>
+        </div>
+        
+        <div class="process__step">
+          <div class="process__step-number">04</div>
+          <h3 class="process__step-title">Aromatisation naturelle</h3>
+          <p class="process__step-desc">
+            Infusions d'ingrédients naturels sélectionnés 
+            pour créer sept expressions uniques.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- CTA CONTACT -->
+  <section class="cta-vodka">
+    <div class="cta-vodka__inner">
+      <div class="t-label">Distribution exclusive</div>
+      <h2 class="t-section">Distribuée en Suisse<br/>par Suisse Prestige</h2>
+      <a href={`${base}/contact`} class="btn-primary">Nous contacter</a>
+    </div>
+  </section>
 </Layout>
 
 <style>
-  /* HERO */
-  .hero {
+  /* ========================================
+     HERO VODKA
+     ======================================== */
+  .hero-vodka {
     position: relative;
     width: 100%;
-    height: 70vh;
-    min-height: 500px;
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .hero__bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('/images/scenes/hoverla-mountain.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.3);
-  }
-
-  .hero__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(8,8,8,0.1) 0%, rgba(8,8,8,0.7) 100%);
-  }
-
-  .hero__content {
-    position: relative;
-    z-index: 1;
-    text-align: left;
-    padding: 0 var(--pad-x) 80px;
-    max-width: var(--container-xl);
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .hero__title {
-    font-family: var(--font-display);
-    font-weight: 300;
-    font-size: clamp(56px, 8vw, 100px);
-    line-height: 0.95;
-    color: var(--white);
-    margin: 16px 0;
-  }
-
-  .hero__subtitle {
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--white-60);
-  }
-
-  /* STORY */
-  .story {
-    padding: var(--section-lg) var(--pad-x);
-    background: var(--black);
-  }
-
-  .story__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    max-width: var(--container-xl);
-    margin: 0 auto;
-  }
-
-  .story__text {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-  }
-
-  .story__heading {
-    font-family: var(--font-display);
-    font-size: clamp(48px, 6vw, 80px);
-    font-weight: 300;
-    line-height: 1.05;
-    color: var(--white);
-  }
-
-  .story__image {
+    align-items: center;
+    justify-content: center;
+    padding: 120px 10vw 80px;
     overflow: hidden;
   }
 
-  .story__image img {
+  .hero-vodka__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 600px;
-    object-fit: cover;
+    height: 100%;
+    background: linear-gradient(180deg, #080808 0%, #0D0A06 100%);
+    z-index: -1;
   }
 
-  /* VARIANTS */
-  .variants {
-    padding: var(--section-lg) var(--pad-x);
+  .hero-vodka__content {
+    text-align: center;
+    margin-bottom: 80px;
+    z-index: 1;
+  }
+
+  .hero-vodka__tagline {
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--white-60);
+    margin-top: 24px;
+  }
+
+  .hero-vodka__lineup {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 32px;
+  }
+
+  .hero-vodka__lineup img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.5));
+  }
+
+  /* ========================================
+     INTRO VODKA
+     ======================================== */
+  .intro-vodka {
+    padding: 160px 10vw;
+    background: var(--black);
+  }
+
+  .intro-vodka__inner {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .intro-vodka__right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* ========================================
+     SAVEURS
+     ======================================== */
+  .saveurs {
+    padding: 160px 10vw;
     background: var(--black-warm);
   }
 
-  .variants__inner {
-    max-width: var(--container-xl);
+  .saveurs__header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .saveurs__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
     margin: 0 auto;
   }
 
-  .variants__header {
-    margin-bottom: 80px;
-    max-width: 600px;
+  .saveur-card {
+    position: relative;
+    padding: 40px 32px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(200, 168, 78, 0.15);
+    border-radius: 4px;
+    transition: all 0.4s ease;
   }
 
-  .variants__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 32px;
+  .saveur-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--gold);
+    transform: translateY(-4px);
   }
 
-  .variant-card {
-    border: 1px solid var(--border);
-    overflow: hidden;
-    transition: border-color 0.3s ease;
-  }
-
-  .variant-card:hover {
-    border-color: var(--gold-dim);
-  }
-
-  .variant-card__image {
-    overflow: hidden;
-    height: 320px;
-    background: #0D0A06;
-  }
-
-  .variant-card__image img {
+  .saveur-card__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
+    height: 3px;
+    border-radius: 4px 4px 0 0;
   }
 
-  .variant-card:hover .variant-card__image img {
-    transform: scale(1.05);
-  }
-
-  .variant-card__info {
-    padding: 24px;
-  }
-
-  .variant-card__name {
-    font-family: var(--font-display);
-    font-size: 28px;
+  .saveur-card__name {
+    font-family: var(--display);
     font-weight: 300;
-    color: var(--gold);
-    margin-bottom: 8px;
+    font-size: 32px;
+    color: var(--white);
+    margin-bottom: 16px;
   }
 
-  .variant-card__desc {
-    font-size: 13px;
+  .saveur-card__desc {
+    font-family: var(--body);
+    font-size: 14px;
     font-weight: 300;
-    color: var(--white-40);
-    line-height: 1.6;
+    line-height: 1.8;
+    color: var(--white-60);
   }
 
-  /* LINEUP */
-  .lineup {
-    padding: 0;
-    background: var(--black);
-  }
-
-  .lineup__inner {
-    max-width: 100%;
-  }
-
-  .lineup__img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-  }
-
-  /* CTA */
-  .vodka-cta {
-    padding: var(--section-lg) var(--pad-x);
+  /* ========================================
+     PROCESS
+     ======================================== */
+  .process {
+    padding: 160px 10vw;
     background: var(--black);
     text-align: center;
   }
 
-  .vodka-cta__inner {
-    max-width: var(--container-lg);
+  .process__inner {
+    max-width: 1200px;
     margin: 0 auto;
   }
 
-  .vodka-cta__title {
-    font-family: var(--font-display);
-    font-size: clamp(48px, 6vw, 80px);
-    font-weight: 300;
-    color: var(--white);
-    margin-bottom: 24px;
+  .process__steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 60px;
+    margin-top: 80px;
   }
 
-  /* MOBILE */
+  .process__step {
+    text-align: left;
+  }
+
+  .process__step-number {
+    font-family: var(--display);
+    font-weight: 300;
+    font-size: 64px;
+    color: var(--gold);
+    opacity: 0.3;
+    margin-bottom: 16px;
+  }
+
+  .process__step-title {
+    font-family: var(--body);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .process__step-desc {
+    font-family: var(--body);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--white-60);
+  }
+
+  /* ========================================
+     CTA VODKA
+     ======================================== */
+  .cta-vodka {
+    padding: 120px 10vw;
+    background: var(--black-warm);
+    border-top: 1px solid var(--gold-dim);
+    text-align: center;
+  }
+
+  .cta-vodka__inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .cta-vodka__inner h2 {
+    margin: 24px 0 48px;
+  }
+
+  /* ========================================
+     MOBILE
+     ======================================== */
   @media (max-width: 768px) {
-    .story__inner {
+    .hero-vodka {
+      padding: 100px 32px 60px;
+    }
+
+    .hero-vodka__lineup {
+      padding: 0 16px;
+    }
+
+    .intro-vodka {
+      padding: 80px 32px;
+    }
+
+    .intro-vodka__inner {
       grid-template-columns: 1fr;
       gap: 40px;
     }
 
-    .story__image img {
-      height: 360px;
+    .saveurs {
+      padding: 80px 32px;
     }
 
-    .variants__grid {
+    .saveurs__grid {
       grid-template-columns: 1fr;
+      gap: 24px;
     }
 
-    .variant-card__image {
-      height: 260px;
+    .process {
+      padding: 80px 32px;
     }
 
-    .lineup__img {
-      height: 300px;
+    .process__steps {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .cta-vodka {
+      padding: 80px 32px;
     }
   }
 </style>

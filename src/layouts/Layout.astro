@@ -1,9 +1,14 @@
 ---
+import '@fontsource/cormorant-garamond/300.css';
+import '@fontsource/cormorant-garamond/300-italic.css';
+import '@fontsource/cormorant-garamond/400.css';
+import '@fontsource/cormorant-garamond/400-italic.css';
+import '@fontsource/montserrat/300.css';
+import '@fontsource/montserrat/400.css';
+import '@fontsource/montserrat/500.css';
 import '../styles/global.css';
-import Nav from '../components/Nav.astro';
-import Footer from '../components/Footer.astro';
-
-const { title = 'Swiss Prestige — Redistribution de Produits de Luxe en Suisse', description = 'Swiss Prestige, votre partenaire exclusif pour la redistribution de produits de luxe en Suisse. Vodka Hoverla, cigares Mont Noir et service de conciergerie premium à Genève.' } = Astro.props;
+const { title = 'CSCO — Excellence & Élégance' } = Astro.props;
+const base = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -12,17 +17,390 @@ const { title = 'Swiss Prestige — Redistribution de Produits de Luxe en Suisse
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title}</title>
-  <meta name="description" content={description}>
-  <link rel="icon" type="image/svg+xml" href="/images/brand/SP_crown_gold_transparent.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <Nav />
-  <main>
-    <slot />
-  </main>
-  <Footer />
+  <!-- AGE GATE OVERLAY -->
+  <div id="age-gate" class="age-gate">
+    <div class="age-gate__content">
+      <div class="age-gate__logo">CSCO</div>
+      <p class="age-gate__text">Confirmez votre âge</p>
+      <div class="age-gate__buttons">
+        <button class="age-gate__btn-confirm" onclick="confirmAge()">J'AI 18 ANS</button>
+        <button class="age-gate__btn-minor" onclick="window.location.href='https://google.com'">MINEUR</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav id="nav" class="nav">
+    <div class="nav__inner">
+      <a href={`${base}/`} class="nav__logo">CSCO</a>
+      
+      <button class="nav__menu-toggle" id="menu-toggle">
+        <span class="nav__menu-text">Menu</span>
+      </button>
+      
+      <div class="nav__links" id="nav-links">
+        <a href={`${base}/vodka`} class="nav__link">Vodka</a>
+        <a href={`${base}/cigares`} class="nav__link">Cigares</a>
+        <a href={`${base}/contact`} class="nav__link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <slot />
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__logo">CSCO</div>
+      <div class="footer__nav">
+        <a href={`${base}/vodka`}>Vodka</a>
+        <a href={`${base}/cigares`}>Cigares</a>
+        <a href={`${base}/contact`}>Contact</a>
+      </div>
+      <div class="footer__social">
+        <a href="https://instagram.com/hoverla.vodka" target="_blank" rel="noopener noreferrer">@hoverla.vodka</a>
+      </div>
+      <div class="footer__legal">Alcool : à consommer avec modération.</div>
+    </div>
+  </footer>
+
+  <style>
+    /* ========================================
+       AGE GATE
+       ======================================== */
+    .age-gate {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      opacity: 1;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .age-gate.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .age-gate__content {
+      text-align: center;
+      max-width: 400px;
+      padding: 40px;
+    }
+
+    .age-gate__logo {
+      font-family: var(--display);
+      font-size: 48px;
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      margin-bottom: 40px;
+    }
+
+    .age-gate__text {
+      font-family: var(--body);
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white-60);
+      margin-bottom: 40px;
+    }
+
+    .age-gate__buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .age-gate__btn-confirm {
+      padding: 16px 48px;
+      border: 1px solid var(--gold);
+      background: transparent;
+      color: var(--gold);
+      font-family: var(--body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .age-gate__btn-confirm:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .age-gate__btn-minor {
+      background: none;
+      border: none;
+      color: var(--white-60);
+      font-family: var(--body);
+      font-size: 11px;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      opacity: 0.4;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+
+    .age-gate__btn-minor:hover {
+      opacity: 0.6;
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      transition: background 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(8, 8, 8, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .nav__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 10vw;
+      max-width: 100%;
+    }
+
+    .nav__logo {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 0.4em;
+      color: var(--gold);
+      transition: color 0.3s ease;
+    }
+
+    .nav__logo:hover {
+      color: var(--white);
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 40px;
+    }
+
+    .nav__link {
+      font-family: var(--body);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white-60);
+      transition: color 0.3s ease;
+    }
+
+    .nav__link:hover {
+      color: var(--gold);
+    }
+
+    .nav__menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .nav__menu-text {
+      font-family: var(--body);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--white-60);
+      transition: color 0.3s ease;
+    }
+
+    .nav__menu-toggle:hover .nav__menu-text {
+      color: var(--gold);
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      background: var(--black);
+      border-top: 1px solid rgba(200, 168, 78, 0.2);
+      padding: 60px 10vw;
+    }
+
+    .footer__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .footer__logo {
+      font-family: var(--display);
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 0.3em;
+      color: var(--gold);
+    }
+
+    .footer__nav {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer__nav a {
+      font-family: var(--body);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white-60);
+      transition: color 0.3s ease;
+    }
+
+    .footer__nav a:hover {
+      color: var(--gold);
+    }
+
+    .footer__social a {
+      font-family: var(--body);
+      font-size: 12px;
+      color: var(--gold);
+      transition: color 0.3s ease;
+    }
+
+    .footer__social a:hover {
+      color: var(--white);
+    }
+
+    .footer__legal {
+      font-family: var(--body);
+      font-size: 10px;
+      color: var(--white-60);
+      opacity: 0.5;
+    }
+
+    /* ========================================
+       MOBILE
+       ======================================== */
+    @media (max-width: 768px) {
+      .nav__inner {
+        padding: 20px 32px;
+      }
+
+      .nav__links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--black);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+      }
+
+      .nav__links.active {
+        display: flex;
+      }
+
+      .nav__link {
+        font-size: 14px;
+      }
+
+      .nav__menu-toggle {
+        display: block;
+      }
+
+      .footer__inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+      }
+
+      .footer__nav {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+
+  <script>
+    // Age Gate
+    function confirmAge() {
+      localStorage.setItem('csco-age-confirmed', 'true');
+      const ageGate = document.getElementById('age-gate');
+      if (ageGate) {
+        ageGate.classList.add('hidden');
+      }
+    }
+
+    // Make confirmAge globally accessible
+    (window as any).confirmAge = confirmAge;
+
+    // Check if age already confirmed
+    if (localStorage.getItem('csco-age-confirmed') === 'true') {
+      const ageGate = document.getElementById('age-gate');
+      if (ageGate) {
+        ageGate.classList.add('hidden');
+      }
+    }
+
+    // Navigation scroll effect
+    const nav = document.getElementById('nav');
+
+    if (nav) {
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 80) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      });
+    }
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+      });
+
+      // Close menu when clicking a link
+      const links = navLinks.querySelectorAll('.nav__link');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+        });
+      });
+    }
+  </script>
 </body>
 </html>

@@ -1,18 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="Swiss Prestige | Redistribution de Produits de Luxe en Suisse" description="Swiss Prestige, votre partenaire exclusif pour la redistribution de produits de luxe en Suisse. Vodka Hoverla, cigares Mont Noir et service de conciergerie premium à Genève.">
-
-  <!-- HERO -->
+<Layout title="CSCO — Excellence & Élégance">
+  <!-- HERO FULLSCREEN -->
   <section class="hero">
     <div class="hero__bg"></div>
-    <div class="hero__overlay"></div>
     <div class="hero__content">
-      <!-- crown removed -->
-      <h1 class="hero__title">L'accès aux<br/>produits rares</h1>
-      <p class="hero__subtitle">Conciergerie et livraison premium en Suisse</p>
-      <a href="#selection" class="hero__cta">
+      <h1 class="hero__title">
+        Excellence<br/>
+        & Élégance
+      </h1>
+      <p class="hero__subtitle">Vodka artisanale · Cigares premium</p>
+      <a href="#hoverla" class="hero__cta">
         <span>Découvrir</span>
         <svg class="hero__arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
           <path d="M8 3v10M8 13l-4-4M8 13l4-4" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
@@ -21,177 +22,142 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- PILLARS -->
-  <section class="pillars">
-    <div class="pillars__inner">
-      <div class="pillar">
-        <div class="pillar__number">01</div>
-        <h3 class="pillar__title">Sélection</h3>
-        <p class="pillar__text">Chaque produit que nous proposons a été trouvé, goûté, et choisi à la main. Pas de catalogue infini — une poignée de références, chacune irréprochable.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar__number">02</div>
-        <h3 class="pillar__title">Conciergerie</h3>
-        <p class="pillar__text">Vous avez un conseiller dédié. Il connaît vos goûts, anticipe vos besoins, et s'assure que vous n'ayez jamais à chercher quoi que ce soit.</p>
-      </div>
-      <div class="pillar">
-        <div class="pillar__number">03</div>
-        <h3 class="pillar__title">Genève</h3>
-        <p class="pillar__text">Installés à Genève, nous travaillons avec la rigueur et la discrétion que vous attendez. Chaque détail est maîtrisé, chaque livraison impeccable.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUCT SHOWCASE: HOVERLA -->
-  <section id="selection" class="showcase">
-    <div class="showcase__inner">
-      <div class="showcase__header">
-        <div class="t-label">Nos premières sélections</div>
-        <h2 class="t-section">Nos premières<br/>sélections</h2>
+  <!-- SECTION HOVERLA -->
+  <section id="hoverla" class="section-hoverla">
+    <div class="section-hoverla__inner">
+      <div class="section-hoverla__text">
+        <div class="t-label">Vodka artisanale ukrainienne</div>
+        <h2 class="t-section">Née dans<br/>les Carpates</h2>
         <div class="divider-gold"></div>
+        <p class="t-body">
+          HOVERLA incarne l'excellence de la distillation ukrainienne. 
+          Élaborée à partir de blé pur des Carpates et d'une eau de source cristalline, 
+          notre vodka se décline en sept saveurs authentiques qui révèlent 
+          la richesse d'un terroir préservé.
+        </p>
+        <a href={`${base}/vodka`} class="btn-primary">Explorer HOVERLA</a>
+      </div>
+      <div class="section-hoverla__image">
+        <img src={`${base}/images/hoverla-official-1.jpg`} alt="HOVERLA Vodka" />
       </div>
     </div>
   </section>
 
-  <!-- HOVERLA -->
-  <section class="product-row">
-    <div class="product-row__inner">
-      <div class="product-row__image">
-        <img src="/images/vodka/hoverla-gamme-bar.jpg" alt="Vodka Hoverla — gamme complète de sept saveurs artisanales" />
+  <!-- SECTION MONT NOIR -->
+  <section class="section-mont-noir">
+    <div class="section-mont-noir__inner">
+      <div class="section-mont-noir__image">
+        <img src={`${base}/images/bg-cigare.jpg`} alt="Mont Noir Cigares" />
       </div>
-      <div class="product-row__text">
-        <div class="t-label">Vodka artisanale</div>
-        <h2 class="product-row__title">Hoverla</h2>
-        <div class="divider-gold"></div>
-        <p class="t-body">Distillée avec l'eau des Carpates et du blé d'altitude ukrainien. Sept infusions distinctes — de l'original cristallin au miel de montagne. Introuvable en Suisse avant Swiss Prestige.</p>
-        <a href="/vodka" class="btn-primary">Explorer la gamme</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- MONT NOIR -->
-  <section class="product-row product-row--reversed">
-    <div class="product-row__inner">
-      <div class="product-row__image">
-        <img src="/images/cigars/csco-coffret-ouvert.jpg" alt="Cigares Mont Noir — coffret ouvert avec cigares roulés main" />
-      </div>
-      <div class="product-row__text">
+      <div class="section-mont-noir__text">
         <div class="t-label">Cigares premium</div>
-        <h2 class="product-row__title">Mont Noir</h2>
+        <h2 class="t-section">L'art<br/>du cigare</h2>
         <div class="divider-gold"></div>
-        <p class="t-body">Roulés à la main en République Dominicaine par des maîtres artisans. Tabac sélectionné feuille par feuille, affinage de plusieurs mois. Proposés en coffrets numérotés, exclusivement via notre conciergerie.</p>
-        <a href="/cigares" class="btn-primary">Découvrir la collection</a>
+        <p class="t-body">
+          Mont Noir représente l'alliance entre tradition dominicaine 
+          et excellence suisse. Une collaboration exclusive avec Vegas Corporan 
+          qui célèbre le savoir-faire artisanal et la passion du cigare.
+        </p>
+        <a href={`${base}/cigares`} class="btn-primary">Découvrir Mont Noir</a>
       </div>
     </div>
   </section>
 
-  <!-- APP TEASER -->
-  <section class="app-teaser">
-    <div class="app-teaser__inner">
-      <div class="app-teaser__content">
-        <div class="t-label">Bientôt disponible</div>
-        <h2 class="app-teaser__title">L'application<br/>conciergerie</h2>
-        <div class="divider-gold"></div>
-        <p class="t-body">Parcourez nos sélections, commandez en quelques gestes, suivez votre livraison en temps réel. Tout le service Swiss Prestige, accessible depuis votre téléphone.</p>
-        <a href="/services" class="btn-secondary">En savoir plus</a>
+  <!-- SECTION CHIFFRES -->
+  <section class="section-stats">
+    <div class="section-stats__inner">
+      <div class="stat">
+        <div class="stat__number">7</div>
+        <div class="stat__label">Saveurs artisanales</div>
       </div>
-      <div class="app-teaser__visual">
-        <img src="/images/brand/SP_crown_gold_transparent.svg" alt="Swiss Prestige — application de conciergerie de luxe" class="app-teaser__icon" />
+      <div class="stat">
+        <div class="stat__number">100<span>%</span></div>
+        <div class="stat__label">Artisanale</div>
+      </div>
+      <div class="stat">
+        <div class="stat__number">1</div>
+        <div class="stat__label">Distributeur exclusif Suisse</div>
       </div>
     </div>
   </section>
-
-  <!-- CTA SECTION -->
-  <section class="cta-section">
-    <div class="cta-section__bg"></div>
-    <div class="cta-section__content">
-      <h2 class="cta-section__title">Écrivez-nous</h2>
-      <p class="t-body" style="text-align:center; max-width:600px; margin:0 auto 40px;">Dites-nous ce que vous aimez. Notre équipe vous recontacte sous 24 heures pour composer votre première sélection sur mesure.</p>
-      <a href="/contact" class="btn-primary">Prendre contact</a>
-    </div>
-  </section>
-
 </Layout>
 
 <style>
-  /* HERO */
+  /* ========================================
+     HERO FULLSCREEN
+     ======================================== */
   .hero {
     position: relative;
     width: 100%;
     height: 100vh;
-    min-height: 700px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
   }
 
   .hero__bg {
     position: absolute;
-    inset: 0;
-    background-image: url('/images/vodka/hoverla-scene.jpg');
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/bg-spirits-dark.jpg');
     background-size: cover;
     background-position: center;
-    filter: brightness(0.35);
-  }
-
-  .hero__overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(8,8,8,0.1) 0%, rgba(8,8,8,0.7) 100%);
+    filter: brightness(0.4);
+    z-index: -1;
   }
 
   .hero__content {
-    position: relative;
+    text-align: center;
     z-index: 1;
-    text-align: left;
-    padding: 0 var(--pad-x) 120px;
-    max-width: var(--container-xl);
-    width: 100%;
-    margin: 0 auto;
+    padding: 0 32px;
   }
 
   .hero__title {
-    font-family: var(--font-display);
+    font-family: var(--display);
     font-weight: 300;
-    font-size: clamp(56px, 8vw, 110px);
+    font-size: clamp(64px, 12vw, 140px);
     line-height: 0.95;
     letter-spacing: -0.01em;
     color: var(--white);
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     animation: fadeUp 1s ease forwards;
   }
 
   .hero__subtitle {
-    font-family: var(--font-body);
+    font-family: var(--body);
     font-size: 13px;
     font-weight: 300;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--white-60);
-    max-width: 500px;
-    margin: 0 0 48px;
+    margin-bottom: 64px;
+    animation: fadeUp 1s ease 0.2s forwards;
     opacity: 0;
-    animation: fadeUp 1s ease 0.3s forwards;
+    animation-fill-mode: forwards;
   }
 
   .hero__cta {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    font-family: var(--font-body);
+    font-family: var(--body);
     font-size: 11px;
     font-weight: 400;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--gold);
+    padding: 16px 0;
+    animation: fadeUp 1s ease 0.4s forwards;
     opacity: 0;
-    animation: fadeUp 1s ease 0.5s forwards;
+    animation-fill-mode: forwards;
     transition: transform 0.3s ease;
   }
 
   .hero__cta:hover {
     transform: translateY(8px);
-    color: var(--gold);
   }
 
   .hero__arrow {
@@ -203,222 +169,174 @@ import Layout from '../layouts/Layout.astro';
     50% { transform: translateY(8px); }
   }
 
-  /* PILLARS */
-  .pillars {
-    padding: var(--section-lg) var(--pad-x);
+  /* ========================================
+     SECTION HOVERLA
+     ======================================== */
+  .section-hoverla {
+    padding: 160px 10vw;
     background: var(--black);
-    border-top: 1px solid var(--border);
   }
 
-  .pillars__inner {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
-    max-width: var(--container-xl);
-    margin: 0 auto;
-  }
-
-  .pillar {
-    padding: 40px 0;
-    border-top: 1px solid var(--gold-dim);
-  }
-
-  .pillar__number {
-    font-family: var(--font-body);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    color: var(--gold);
-    margin-bottom: 24px;
-  }
-
-  .pillar__title {
-    font-family: var(--font-display);
-    font-size: clamp(32px, 3vw, 48px);
-    font-weight: 300;
-    color: var(--white);
-    margin-bottom: 16px;
-  }
-
-  .pillar__text {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 1.8;
-    color: var(--white-40);
-  }
-
-  /* SHOWCASE HEADER */
-  .showcase {
-    padding: var(--section-lg) var(--pad-x) 60px;
-    background: var(--black-warm);
-  }
-
-  .showcase__inner {
-    max-width: var(--container-xl);
-    margin: 0 auto;
-  }
-
-  .showcase__header {
-    max-width: 700px;
-  }
-
-  /* PRODUCT ROW */
-  .product-row {
-    padding: 0 var(--pad-x) var(--section-lg);
-    background: var(--black-warm);
-  }
-
-  .product-row__inner {
+  .section-hoverla__inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
-    max-width: var(--container-xl);
+    max-width: 1400px;
     margin: 0 auto;
   }
 
-  .product-row__image {
+  .section-hoverla__text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .section-hoverla__image {
+    position: relative;
+    border-radius: 4px;
     overflow: hidden;
-  }
-
-  .product-row__image img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-  }
-
-  .product-row__text {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .product-row__title {
-    font-family: var(--font-display);
-    font-size: clamp(48px, 6vw, 80px);
-    font-weight: 300;
-    line-height: 1;
-    color: var(--white);
-  }
-
-  .product-row--reversed .product-row__inner {
-    direction: rtl;
-  }
-
-  .product-row--reversed .product-row__inner > * {
-    direction: ltr;
-  }
-
-  /* APP TEASER */
-  .app-teaser {
-    padding: var(--section-lg) var(--pad-x);
-    background: var(--black);
-    border-top: 1px solid var(--border);
-  }
-
-  .app-teaser__inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-    max-width: var(--container-xl);
-    margin: 0 auto;
-  }
-
-  .app-teaser__content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .app-teaser__title {
-    font-family: var(--font-display);
-    font-size: clamp(48px, 6vw, 80px);
-    font-weight: 300;
-    line-height: 1.05;
-    color: var(--white);
-  }
-
-  .app-teaser__visual {
+    background: linear-gradient(135deg, #1a1a1a 0%, #080808 100%);
+    padding: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px;
-    background: linear-gradient(135deg, rgba(200,168,78,0.05) 0%, rgba(200,168,78,0.02) 100%);
-    border: 1px solid var(--gold-dim);
   }
 
-  .app-teaser__icon {
-    width: 120px;
+  .section-hoverla__image img {
+    width: 100%;
+    max-width: 400px;
     height: auto;
-    opacity: 0.6;
+    mix-blend-mode: multiply;
+    filter: brightness(1.1) contrast(1.05);
   }
 
-  /* CTA SECTION */
-  .cta-section {
-    position: relative;
-    padding: var(--section-lg) var(--pad-x);
+  /* ========================================
+     SECTION MONT NOIR
+     ======================================== */
+  .section-mont-noir {
+    padding: 160px 10vw;
+    background: var(--black-warm);
+  }
+
+  .section-mont-noir__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .section-mont-noir__text {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .section-mont-noir__image {
+    border-radius: 4px;
     overflow: hidden;
+    height: 600px;
   }
 
-  .cta-section__bg {
-    position: absolute;
-    inset: 0;
-    background-image: url('/images/scenes/bg-bar-luxe.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: brightness(0.25);
+  .section-mont-noir__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  .cta-section__content {
-    position: relative;
-    z-index: 1;
+  /* ========================================
+     SECTION STATS
+     ======================================== */
+  .section-stats {
+    padding: 120px 10vw;
+    background: var(--black);
+    border-top: 1px solid var(--gold-dim);
+  }
+
+  .section-stats__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
   }
 
-  .cta-section__title {
-    font-family: var(--font-display);
-    font-size: clamp(48px, 7vw, 88px);
+  .stat__number {
+    font-family: var(--display);
     font-weight: 300;
-    line-height: 1.05;
-    color: var(--white);
-    margin-bottom: 24px;
+    font-size: clamp(64px, 8vw, 96px);
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: 16px;
   }
 
-  /* MOBILE */
+  .stat__number span {
+    font-size: 0.5em;
+    color: var(--white-60);
+  }
+
+  .stat__label {
+    font-family: var(--body);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white-60);
+  }
+
+  /* ========================================
+     MOBILE
+     ======================================== */
   @media (max-width: 768px) {
-    .hero__content {
-      padding: 0 24px 80px;
+    .hero__title {
+      font-size: clamp(48px, 10vw, 72px);
     }
 
-    .hero__subtitle {
-      font-size: 11px;
-      letter-spacing: 0.15em;
+    .section-hoverla {
+      padding: 80px 32px;
     }
 
-    .pillars__inner {
+    .section-hoverla__inner {
       grid-template-columns: 1fr;
-      gap: 0;
+      gap: 48px;
     }
 
-    .product-row__inner,
-    .product-row--reversed .product-row__inner {
+    .section-hoverla__image {
+      padding: 40px;
+    }
+
+    .section-mont-noir {
+      padding: 80px 32px;
+    }
+
+    .section-mont-noir__inner {
       grid-template-columns: 1fr;
-      gap: 40px;
-      direction: ltr;
+      gap: 48px;
     }
 
-    .product-row__image img {
-      height: 320px;
+    .section-mont-noir__image {
+      height: 400px;
     }
 
-    .app-teaser__inner {
+    /* Inverse order on mobile: text first */
+    .section-mont-noir__text {
+      order: 1;
+    }
+
+    .section-mont-noir__image {
+      order: 2;
+    }
+
+    .section-stats {
+      padding: 80px 32px;
+    }
+
+    .section-stats__inner {
       grid-template-columns: 1fr;
-      gap: 40px;
-    }
-
-    .app-teaser__visual {
-      padding: 60px;
+      gap: 48px;
     }
   }
 </style>

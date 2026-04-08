@@ -1,0 +1,117 @@
+---
+// Age Gate - OBLIGATOIRE pour sites spirits
+---
+
+<div id="age-gate" class="age-gate">
+  <div class="age-gate__content">
+    <div class="age-gate__logo">CSCO</div>
+    <p class="age-gate__question">Êtes-vous majeur ?</p>
+    <p class="age-gate__legal">Vous devez avoir 18 ans ou plus pour accéder à ce site.</p>
+    <div class="age-gate__buttons">
+      <button id="age-yes" class="btn btn-gold">OUI J'AI 18 ANS</button>
+      <button id="age-no" class="btn btn-ghost">NON</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .age-gate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 8, 8, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  .age-gate.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .age-gate__content {
+    text-align: center;
+    max-width: 500px;
+    padding: 40px;
+  }
+
+  .age-gate__logo {
+    font-family: var(--font-display);
+    font-size: 72px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-bottom: 60px;
+  }
+
+  .age-gate__question {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .age-gate__legal {
+    font-size: 14px;
+    color: var(--white-dim);
+    margin-bottom: 40px;
+    line-height: 1.6;
+  }
+
+  .age-gate__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .age-gate__buttons .btn {
+    min-width: 240px;
+  }
+
+  @media (max-width: 768px) {
+    .age-gate__logo {
+      font-size: 48px;
+      margin-bottom: 40px;
+    }
+
+    .age-gate__question {
+      font-size: 24px;
+    }
+
+    .age-gate__content {
+      padding: 24px;
+    }
+  }
+</style>
+
+<script>
+  // Age gate logic - sessionStorage
+  const ageGate = document.getElementById('age-gate');
+  const btnYes = document.getElementById('age-yes');
+  const btnNo = document.getElementById('age-no');
+
+  // Check if user already confirmed age
+  if (sessionStorage.getItem('age-verified') === 'true') {
+    ageGate?.classList.add('hidden');
+  }
+
+  // User confirms age
+  btnYes?.addEventListener('click', () => {
+    sessionStorage.setItem('age-verified', 'true');
+    ageGate?.classList.add('hidden');
+  });
+
+  // User denies age
+  btnNo?.addEventListener('click', () => {
+    window.location.href = 'https://www.google.com';
+  });
+</script>
