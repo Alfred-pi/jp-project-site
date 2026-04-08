@@ -1,41 +1,36 @@
 ---
-const { current = "/" } = Astro.props;
-const base = import.meta.env.BASE_URL;
-
 const links = [
-  { href: `${base}`, label: "Accueil" },
-  { href: `${base}/vodka`, label: "Vodka" },
-  { href: `${base}/cigares`, label: "Cigares" },
-  { href: `${base}/coffrets`, label: "Coffrets" },
-  { href: `${base}/contact`, label: "Contact" },
+  { href: "/", label: "Accueil" },
+  { href: "/vodka", label: "Vodka" },
+  { href: "/cigares", label: "Cigares" },
+  { href: "/services", label: "Services" },
+  { href: "/contact", label: "Contact" },
 ];
 ---
 
-<nav class="nav">
+<nav class="nav" id="nav">
   <div class="nav__container">
-    <a href={base} class="nav__logo">CSCO</a>
-    
+    <a href="/" class="nav__logo">
+      <img src="/images/brand/SP_horizontale_dark_transparent.svg" alt="Swiss Prestige" class="nav__logo-img" />
+    </a>
+
     <ul class="nav__links">
       {links.map(link => (
         <li>
-          <a 
-            href={link.href} 
-            class:list={["nav__link", { active: current === link.href }]}
-          >
-            {link.label}
-          </a>
+          <a href={link.href} class="nav__link">{link.label}</a>
         </li>
       ))}
     </ul>
 
-    <button class="nav__menu-toggle" id="menu-toggle">
-      <span>Menu</span>
+    <button class="nav__menu-toggle" id="menu-toggle" aria-label="Menu">
+      <span class="nav__menu-bar"></span>
+      <span class="nav__menu-bar"></span>
     </button>
   </div>
 
-  <!-- Mobile Menu Fullscreen -->
+  <!-- Mobile fullscreen menu -->
   <div class="nav__mobile" id="mobile-menu">
-    <button class="nav__mobile-close" id="menu-close">×</button>
+    <button class="nav__mobile-close" id="menu-close" aria-label="Fermer">&times;</button>
     <ul class="nav__mobile-links">
       {links.map(link => (
         <li>
@@ -52,32 +47,40 @@ const links = [
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
-    background: rgba(8, 8, 8, 0.9);
-    backdrop-filter: blur(10px);
+    z-index: var(--z-nav);
+    transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  }
+
+  .nav.scrolled {
+    background: rgba(8, 8, 8, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
   }
 
   .nav__container {
     max-width: 1600px;
     margin: 0 auto;
-    padding: 24px 40px;
+    padding: 20px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
   .nav__logo {
-    font-family: var(--font-display);
-    font-size: 24px;
-    font-weight: 400;
-    letter-spacing: 0.3em;
-    color: var(--gold);
-    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease;
   }
 
   .nav__logo:hover {
-    color: var(--gold-light);
+    opacity: 0.8;
+    color: inherit;
+  }
+
+  .nav__logo-img {
+    height: 80px;
+    width: auto;
   }
 
   .nav__links {
@@ -89,56 +92,54 @@ const links = [
   }
 
   .nav__link {
+    font-family: var(--font-body);
     font-size: 11px;
     font-weight: 400;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: rgba(245, 242, 236, 0.8);
+    color: var(--white-60);
     transition: color 0.3s ease;
     position: relative;
   }
 
-  .nav__link:hover,
-  .nav__link.active {
+  .nav__link:hover {
     color: var(--gold);
   }
 
-  .nav__link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: var(--gold);
-  }
-
+  /* Hamburger */
   .nav__menu-toggle {
     display: none;
     background: none;
     border: none;
-    color: var(--white);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
     cursor: pointer;
-    font-family: var(--font-body);
-    transition: color 0.3s ease;
+    padding: 8px;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
   }
 
-  .nav__menu-toggle:hover {
-    color: var(--gold);
+  .nav__menu-bar {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--white-60);
+    transition: background 0.3s ease;
   }
 
-  /* Mobile Menu */
+  .nav__menu-toggle:hover .nav__menu-bar {
+    background: var(--gold);
+  }
+
+  /* Mobile menu */
   .nav__mobile {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: var(--bg);
-    z-index: 9998;
+    background: var(--black);
+    z-index: var(--z-mobile-menu);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -155,11 +156,11 @@ const links = [
 
   .nav__mobile-close {
     position: absolute;
-    top: 32px;
-    right: 40px;
+    top: 24px;
+    right: 32px;
     background: none;
     border: none;
-    color: var(--white);
+    color: var(--white-60);
     font-size: 48px;
     font-weight: 300;
     cursor: pointer;
@@ -198,22 +199,18 @@ const links = [
     .nav__links {
       display: none;
     }
-
     .nav__menu-toggle {
-      display: block;
+      display: flex;
     }
   }
 
   @media (max-width: 768px) {
     .nav__container {
-      padding: 20px 24px;
+      padding: 16px 24px;
     }
-
-    .nav__logo {
-      font-size: 20px;
-      letter-spacing: 0.2em;
+    .nav__logo-img {
+      height: 64px;
     }
-
     .nav__mobile-link {
       font-size: 32px;
     }
@@ -221,10 +218,23 @@ const links = [
 </style>
 
 <script>
+  const nav = document.getElementById('nav');
   const menuToggle = document.getElementById('menu-toggle');
   const menuClose = document.getElementById('menu-close');
   const mobileMenu = document.getElementById('mobile-menu');
 
+  // Scroll effect
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  }
+
+  // Mobile menu
   menuToggle?.addEventListener('click', () => {
     mobileMenu?.classList.add('active');
   });
@@ -233,7 +243,6 @@ const links = [
     mobileMenu?.classList.remove('active');
   });
 
-  // Close menu on link click
   const mobileLinks = document.querySelectorAll('.nav__mobile-link');
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {

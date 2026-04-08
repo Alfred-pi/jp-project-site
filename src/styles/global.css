@@ -1,110 +1,49 @@
 /* ========================================
-   CSCO V3 — LUXURY DESIGN SYSTEM
-   Références: Dom Pérignon, Belvedere, Hennessy
+   SWISS PRESTIGE — LUXURY DESIGN SYSTEM
    ======================================== */
 
+/* Fonts loaded via Google Fonts in Layout.astro */
+
 /* ========================================
-   DESIGN TOKENS — COMPLETE SYSTEM
+   DESIGN TOKENS
    ======================================== */
 :root {
-  /* ========== COLORS ========== */
-  /* Primary */
+  /* Colors */
   --black: #080808;
   --black-warm: #0D0A06;
   --cream: #F2EDE4;
-  --cream-dark: #E8E0D4;
   --gold: #C8A84E;
-  --gold-dim: rgba(200, 168, 78, 0.3);
+  --gold-dim: rgba(200, 168, 78, 0.15);
   --gold-hover: #D4B65E;
   --white: #F5F2EC;
   --white-60: rgba(245, 242, 236, 0.6);
   --white-40: rgba(245, 242, 236, 0.4);
   --white-20: rgba(245, 242, 236, 0.2);
-  
-  /* Text */
-  --text-dark: #1a1a1a;
-  --text-warm: #5a5248;
-  
-  /* Semantic */
-  --success: #4A7C59;
-  --error: #8B3A3A;
-  
-  /* ========== SPACING (8pt grid) ========== */
-  --space-0: 0;
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-16: 64px;
-  --space-20: 80px;
-  --space-24: 96px;
-  --space-32: 128px;
-  
-  /* Section spacing */
-  --space-section-sm: 80px;
-  --space-section-md: 120px;
-  --space-section-lg: 160px;
-  
-  /* ========== TYPOGRAPHY ========== */
-  --display: 'Cormorant Garamond', serif;
-  --body: 'Montserrat', sans-serif;
-  
-  /* Fluid type scale */
-  --text-xs: 10px;
-  --text-sm: 13px;
-  --text-base: 15px;
-  --text-lg: 18px;
-  --text-xl: 22px;
-  
-  /* ========== BORDERS ========== */
-  --radius-sm: 2px;
-  --radius-md: 4px;
-  --radius-lg: 8px;
-  --radius-full: 9999px;
-  --border-thin: 1px;
-  
-  /* ========== SHADOWS ========== */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.25);
-  --shadow-xl: 0 32px 64px rgba(0, 0, 0, 0.35);
-  
-  /* ========== ANIMATION ========== */
-  --duration-fast: 150ms;
-  --duration-base: 300ms;
-  --duration-slow: 500ms;
-  --duration-slower: 800ms;
-  --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  
-  /* ========== Z-INDEX ========== */
-  --z-base: 0;
-  --z-dropdown: 100;
-  --z-sticky: 500;
-  --z-overlay: 900;
-  --z-modal: 1000;
-  --z-toast: 1500;
-  
-  /* ========== BREAKPOINTS (for reference) ========== */
-  /* xs: 0, sm: 480px, md: 640px, lg: 768px, xl: 1024px, 2xl: 1280px */
-  
-  /* ========== CONTAINERS ========== */
-  --container-sm: 640px;
-  --container-md: 800px;
-  --container-lg: 1200px;
+  --border: rgba(242, 237, 228, 0.08);
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --section-lg: 160px;
+  --section-md: 120px;
+  --section-sm: 80px;
+  --pad-x: 10vw;
+
+  /* Containers */
   --container-xl: 1400px;
+  --container-lg: 1200px;
+
+  /* Z-index */
+  --z-nav: 1000;
+  --z-mobile-menu: 9998;
 }
 
 /* ========================================
    RESET & BASE
    ======================================== */
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -116,7 +55,7 @@ html {
 }
 
 body {
-  font-family: var(--body);
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   color: var(--white);
@@ -126,76 +65,10 @@ body {
   overflow-x: hidden;
 }
 
-/* ========================================
-   TYPOGRAPHIE LUXE
-   ======================================== */
-
-/* Monstre pour les héros */
-.t-hero {
-  font-family: var(--display);
-  font-weight: 300;
-  font-size: clamp(72px, 10vw, 120px);
-  line-height: 0.9;
-  letter-spacing: -0.02em;
-  color: var(--white);
-}
-
-/* Grand titre de section */
-.t-section {
-  font-family: var(--display);
-  font-weight: 300;
-  font-size: clamp(48px, 7vw, 88px);
-  line-height: 1.05;
-  color: var(--white);
-}
-
-/* Citation monumentale */
-.t-quote {
-  font-family: var(--display);
-  font-weight: 300;
-  font-style: italic;
-  font-size: clamp(36px, 5vw, 72px);
-  line-height: 1.2;
-  color: var(--white);
-}
-
-/* Label catégorie */
-.t-label {
-  font-family: var(--body);
-  font-weight: 500;
-  font-size: 11px;
-  line-height: 1;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-/* Body luxe */
-.t-body {
-  font-family: var(--body);
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.9;
-  color: var(--white-60);
-}
-
-/* Titres standards (fallback) */
-h1, h2, h3 {
-  font-family: var(--display);
-  font-weight: 300;
-  color: var(--white);
-}
-
-h1 { font-size: clamp(72px, 10vw, 120px); line-height: 0.9; }
-h2 { font-size: clamp(48px, 7vw, 88px); line-height: 1.05; }
-h3 { font-size: clamp(32px, 4vw, 56px); line-height: 1.1; }
-
-p {
-  font-family: var(--body);
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 1.9;
-  color: var(--white-60);
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 a {
@@ -208,10 +81,61 @@ a:hover {
   color: var(--gold);
 }
 
-/* ========================================
-   UTILITY
-   ======================================== */
+ul, ol {
+  list-style: none;
+}
 
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--white);
+}
+
+h1 { font-size: clamp(64px, 10vw, 120px); line-height: 0.92; }
+h2 { font-size: clamp(48px, 7vw, 88px); line-height: 1.05; }
+h3 { font-size: clamp(32px, 4vw, 56px); line-height: 1.1; }
+
+p {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--white-60);
+}
+
+/* Utility typography */
+.t-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.t-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--white-60);
+}
+
+.t-section {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1.05;
+  color: var(--white);
+}
+
+/* ========================================
+   DIVIDERS
+   ======================================== */
 .divider-gold {
   width: 40px;
   height: 1px;
@@ -223,42 +147,16 @@ a:hover {
   width: 100%;
   height: 1px;
   background: var(--gold-dim);
-  margin: 0;
 }
 
 /* ========================================
-   BUTTONS & LINKS
+   BUTTONS
    ======================================== */
-
-.link-arrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--body);
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.05em;
-  color: var(--white);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: color 0.3s ease, text-decoration-color 0.3s ease;
-}
-
-.link-arrow:hover {
-  color: var(--gold);
-  text-decoration-color: var(--gold);
-}
-
-.link-arrow::after {
-  content: '↓';
-  font-size: 14px;
-}
-
 .btn-primary {
   display: inline-block;
   padding: 16px 48px;
   border: 1px solid var(--gold);
-  font-family: var(--body);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.15em;
@@ -277,8 +175,8 @@ a:hover {
 .btn-secondary {
   display: inline-block;
   padding: 16px 48px;
-  border: 1px solid var(--white);
-  font-family: var(--body);
+  border: 1px solid var(--white-40);
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.15em;
@@ -297,46 +195,14 @@ a:hover {
 /* ========================================
    SECTIONS
    ======================================== */
-
 section {
   position: relative;
   overflow: hidden;
 }
 
 /* ========================================
-   IMAGES
-   ======================================== */
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.img-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* ========================================
-   SCROLL BEHAVIOUR
-   ======================================== */
-
-/* Hide scrollbar for horizontal scrolls */
-.scroll-horizontal::-webkit-scrollbar {
-  display: none;
-}
-
-.scroll-horizontal {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-/* ========================================
    ANIMATIONS
    ======================================== */
-
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -348,29 +214,40 @@ img {
   }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .fade-up {
   animation: fadeUp 0.8s ease forwards;
 }
 
 /* ========================================
-   MOBILE RESPONSIVENESS
+   RESPONSIVE
    ======================================== */
-
 @media (max-width: 768px) {
+  :root {
+    --section-lg: 80px;
+    --section-md: 64px;
+    --section-sm: 48px;
+    --pad-x: 24px;
+  }
+
   body {
     font-size: 14px;
   }
-  
+
   .t-label {
     font-size: 10px;
     letter-spacing: 0.2em;
   }
-  
+
   .t-body, p {
     font-size: 14px;
     line-height: 1.8;
   }
-  
+
   .btn-primary,
   .btn-secondary {
     padding: 14px 32px;

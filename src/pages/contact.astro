@@ -2,250 +2,302 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Contact — CSCO">
-  <!-- HERO CONTACT -->
-  <section class="hero-contact">
-    <div class="hero-contact__content">
-      <div class="t-label">Contactez-nous</div>
-      <h1 class="t-section">Parlons<br/>excellence</h1>
-      <div class="divider-gold" style="margin: 32px auto;"></div>
-      <p class="t-body" style="max-width: 600px; margin: 0 auto; text-align: center;">
-        Pour toute demande d'information, collaboration ou distribution, 
-        notre équipe est à votre écoute.
-      </p>
+<Layout title="Contact | Swiss Prestige — Genève, Suisse" description="Contactez Swiss Prestige à Genève pour une consultation personnalisée, passer commande ou organiser un événement corporate avec nos produits de luxe.">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <div class="t-label">Prenez contact</div>
+      <h1 class="hero__title">Parlons</h1>
+      <p class="hero__subtitle">Genève, Suisse</p>
     </div>
   </section>
 
-  <!-- CONTACT INFO -->
-  <section class="contact-info">
-    <div class="contact-info__inner">
-      <!-- WhatsApp -->
-      <div class="contact-card">
-        <div class="contact-card__icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-          </svg>
+  <!-- CONTACT CONTENT -->
+  <section class="contact-section">
+    <div class="contact-section__inner">
+      <!-- INFO -->
+      <div class="contact-info">
+        <div class="t-label">Coordonnées</div>
+        <h2 class="contact-info__heading">Swiss Prestige</h2>
+        <div class="divider-gold"></div>
+
+        <div class="contact-info__items">
+          <div class="contact-info__item">
+            <div class="contact-info__label">Adresse</div>
+            <div class="contact-info__value">Genève, Suisse</div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__label">Email</div>
+            <div class="contact-info__value">
+              <a href="mailto:contact@swiss-prestige.ch">contact@swiss-prestige.ch</a>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__label">Réseaux</div>
+            <div class="contact-info__value">
+              <a href="https://instagram.com/swissprestige" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </div>
+          <div class="contact-info__item">
+            <div class="contact-info__label">Horaires</div>
+            <div class="contact-info__value">Lun — Ven, 9h — 18h</div>
+          </div>
         </div>
-        <h3 class="contact-card__title">WhatsApp</h3>
-        <p class="contact-card__desc">Contactez-nous directement</p>
-        <a href="https://wa.me/41791234567" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          Envoyer un message
-        </a>
       </div>
 
-      <!-- Email -->
-      <div class="contact-card">
-        <div class="contact-card__icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-        </div>
-        <h3 class="contact-card__title">Email</h3>
-        <p class="contact-card__desc">Écrivez-nous</p>
-        <a href="mailto:contact@hoverlavodka.com" class="btn-primary">
-          contact@hoverlavodka.com
-        </a>
-      </div>
+      <!-- FORM -->
+      <div class="contact-form">
+        <div class="t-label">Écrivez-nous</div>
+        <h3 class="contact-form__heading">Votre message</h3>
+        <div class="divider-gold"></div>
 
-      <!-- Instagram -->
-      <div class="contact-card">
-        <div class="contact-card__icon">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </div>
-        <h3 class="contact-card__title">Instagram</h3>
-        <p class="contact-card__desc">Suivez notre actualité</p>
-        <a href="https://instagram.com/hoverla.vodka" target="_blank" rel="noopener noreferrer" class="btn-primary">
-          @hoverla.vodka
-        </a>
-      </div>
-    </div>
-  </section>
+        <form class="form" id="contact-form">
+          <div class="form__row">
+            <div class="form__group">
+              <label class="form__label" for="name">Nom</label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="Votre nom" required />
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="email">Email</label>
+              <input type="email" id="email" name="email" class="form__input" placeholder="votre@email.com" required />
+            </div>
+          </div>
 
-  <!-- DISTRIBUTION -->
-  <section class="distribution">
-    <div class="distribution__inner">
-      <div class="t-label">Distribution</div>
-      <h2 class="t-section">Distributeur exclusif<br/>en Suisse</h2>
-      <div class="divider-gold" style="margin: 32px auto;"></div>
-      <p class="t-body" style="max-width: 700px; margin: 0 auto; text-align: center;">
-        <strong style="color: var(--gold);">Suisse Prestige</strong> est le distributeur exclusif 
-        de HOVERLA Vodka et Mont Noir Cigares sur le territoire suisse. 
-        Pour toute demande de distribution, partenariat ou questions professionnelles, 
-        contactez-nous via les moyens ci-dessus.
-      </p>
-    </div>
-  </section>
+          <div class="form__group">
+            <label class="form__label" for="subject">Sujet</label>
+            <select id="subject" name="subject" class="form__input">
+              <option value="general">Question générale</option>
+              <option value="commande">Passer commande</option>
+              <option value="conciergerie">Service conciergerie</option>
+              <option value="corporate">Événement corporate</option>
+              <option value="partenariat">Partenariat</option>
+            </select>
+          </div>
 
-  <!-- MAP (optionnel - placeholder) -->
-  <section class="map-section">
-    <div class="map-placeholder">
-      <div class="map-placeholder__content">
-        <div class="t-label">Suisse</div>
-        <h3 class="t-section" style="font-size: clamp(32px, 4vw, 48px);">Nous sommes basés<br/>en Suisse romande</h3>
+          <div class="form__group">
+            <label class="form__label" for="message">Message</label>
+            <textarea id="message" name="message" class="form__input form__textarea" placeholder="Décrivez votre demande..." rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary">Envoyer</button>
+        </form>
       </div>
     </div>
   </section>
+
 </Layout>
 
 <style>
-  /* ========================================
-     HERO CONTACT
-     ======================================== */
-  .hero-contact {
-    padding: 160px 10vw 120px;
-    background: var(--black);
-    text-align: center;
+  /* HERO */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
   }
 
-  .hero-contact__content {
-    max-width: 800px;
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/scenes/bg-mountain.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.3);
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8,8,8,0.1) 0%, rgba(8,8,8,0.7) 100%);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    padding: 0 var(--pad-x) 80px;
+    max-width: var(--container-xl);
+    width: 100%;
     margin: 0 auto;
   }
 
-  /* ========================================
-     CONTACT INFO
-     ======================================== */
-  .contact-info {
-    padding: 80px 10vw 120px;
+  .hero__title {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(56px, 8vw, 100px);
+    line-height: 0.95;
+    color: var(--white);
+    margin: 16px 0;
+  }
+
+  .hero__subtitle {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white-60);
+  }
+
+  /* CONTACT SECTION */
+  .contact-section {
+    padding: var(--section-lg) var(--pad-x);
     background: var(--black);
   }
 
-  .contact-info__inner {
+  .contact-section__inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 100px;
+    max-width: var(--container-xl);
     margin: 0 auto;
   }
 
-  .contact-card {
+  /* INFO */
+  .contact-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 48px 32px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(200, 168, 78, 0.15);
-    border-radius: 4px;
-    transition: all 0.4s ease;
+    gap: 16px;
   }
 
-  .contact-card:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: var(--gold);
-    transform: translateY(-4px);
+  .contact-info__heading {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
   }
 
-  .contact-card__icon {
+  .contact-info__items {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 20px;
+  }
+
+  .contact-info__item {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .contact-info__label {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 24px;
+    margin-bottom: 8px;
   }
 
-  .contact-card__title {
-    font-family: var(--body);
-    font-size: 13px;
+  .contact-info__value {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--white-60);
+  }
+
+  .contact-info__value a {
+    color: var(--white-60);
+    transition: color 0.3s ease;
+  }
+
+  .contact-info__value a:hover {
+    color: var(--gold);
+  }
+
+  /* FORM */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .contact-form__heading {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 300;
+    color: var(--white);
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 12px;
+  }
+
+  .form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .form__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form__label {
+    font-family: var(--font-body);
+    font-size: 10px;
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 12px;
+    color: var(--gold);
   }
 
-  .contact-card__desc {
-    font-family: var(--body);
+  .form__input {
+    font-family: var(--font-body);
     font-size: 14px;
     font-weight: 300;
-    color: var(--white-60);
-    margin-bottom: 32px;
+    color: var(--white);
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    transition: border-color 0.3s ease;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
   }
 
-  .contact-card a.btn-primary {
-    width: 100%;
-    max-width: 280px;
+  .form__input::placeholder {
+    color: var(--white-20);
   }
 
-  /* ========================================
-     DISTRIBUTION
-     ======================================== */
-  .distribution {
-    padding: 120px 10vw;
-    background: var(--black-warm);
-    border-top: 1px solid var(--gold-dim);
-    text-align: center;
+  .form__input:focus {
+    border-color: var(--gold);
   }
 
-  .distribution__inner {
-    max-width: 900px;
-    margin: 0 auto;
+  .form__textarea {
+    resize: vertical;
+    min-height: 160px;
   }
 
-  /* ========================================
-     MAP SECTION
-     ======================================== */
-  .map-section {
-    position: relative;
-    overflow: hidden;
+  select.form__input {
+    cursor: pointer;
   }
 
-  .map-placeholder {
-    position: relative;
-    min-height: 500px;
-    background: linear-gradient(135deg, #0D0A06 0%, #080808 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+  select.form__input option {
+    background: var(--black);
+    color: var(--white);
   }
 
-  .map-placeholder::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/images/bg-mountain.jpg');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15;
-    filter: grayscale(1);
-  }
-
-  .map-placeholder__content {
-    position: relative;
-    text-align: center;
-    z-index: 1;
-    padding: 0 32px;
-  }
-
-  /* ========================================
-     MOBILE
-     ======================================== */
+  /* MOBILE */
   @media (max-width: 768px) {
-    .hero-contact {
-      padding: 120px 32px 80px;
-    }
-
-    .contact-info {
-      padding: 60px 32px 80px;
-    }
-
-    .contact-info__inner {
+    .contact-section__inner {
       grid-template-columns: 1fr;
-      gap: 24px;
+      gap: 60px;
     }
 
-    .distribution {
-      padding: 80px 32px;
-    }
-
-    .map-placeholder {
-      min-height: 400px;
+    .form__row {
+      grid-template-columns: 1fr;
     }
   }
 </style>
